@@ -29,24 +29,20 @@ __version__ = "0.0.1"
 import re
 import json
 from xml.dom import minidom
-from gridtool import colors
+from submitter import colors
 import numpy as numpy
 import sys
 import time
 import os
 import getpass
 
-from CRABAPI.RawCommand import crabCommand
-from CRABClient.ClientExceptions import ClientException
-from CRABClient.UserUtilities import config
 from httplib import HTTPException
 from multiprocessing import Process
 
-#config=config()
-
 color = colors.Paint()
-NBLOCKS = 13 # number of keys per dataset block.
-NJOBS = 8000 # fixed number of jobs for mc_private_production mode.
+NBLOCKS = 7 # number of keys per dataset block.
+gridenable = False # enable submission for a specific CMS T2. Please, use it carefully and in contact with your T2 grid admin.
+condor_server = "_CONDOR_SCHEDD_HOST=bigbird17.cern.ch _CONDOR_CREDD_HOST=bigbird17.cern.ch"
 
 class Parser():
 
@@ -62,71 +58,79 @@ class Parser():
          try:
           self.data = json.load(json_file)
          except ValueError as err:
-          print("\n"+color.FAIL+"[gridtool] The file {} is not valid.\nPlease, check it."+color.ENDC+"\n").format(json_file)
+          print("\n"+color.FAIL+"[submitter:condor] The file {} is not valid.\nPlease, check it."+color.ENDC+"\n").format(json_file)
           exit()
 
         if "datasets" in self.data:
          for p in self.data["datasets"]:
           self.count_data = self.count_data + 1
           if "id" not in p:
-            print("\n"+color.FAIL+"[gridtool] The key \"id\" must be defined in each dataset bracket.\nPlease, check it."+color.ENDC+"\n")
+            print("\n"+color.FAIL+"[submitter:condor] The key \"id\" must be defined in each dataset bracket.\nPlease, check it."+color.ENDC+"\n")
             exit()
           else:
             check_id = isinstance(p["id"], int)
             if not check_id:
-             print("\n"+color.FAIL+"[gridtool] The key \"id\" must be integer. Id is defined as {}.\nPlease, check it."+color.ENDC+"\n").format(type(p["id"]))
+             print("\n"+color.FAIL+"[submitter:condor] The key \"id\" must be integer. Id is defined as {}.\nPlease, check it."+color.ENDC+"\n").format(type(p["id"]))
              exit()
           for key in p:
            if "id" == key or\
               "enable" == key or\
-              "localpath" == key or\
-              "eospath" == key or\
-              "name" == key or\
-              "sample" == key or\
-              "mode" == key or\
-              "lumimask" == key or\
-              "config" == key or\
+              "inputfolder" == key or\
+              "executable" == key or\
+              "inputfiles" == key or\
               "parameters" == key or\
-              "output" == key or\
-              "unitsperjob" == key or\
-              "site" == key:
+              "output" == key:
             self.count_key = self.count_key + 1
            else:
-            print("\n"+color.FAIL+"[gridtool] {} is _not_ a valid key for the dataset id {}.\nPlease, check your JSON file."+color.ENDC+"\n").format(str(key), str(self.count_key))
+            print("\n"+color.FAIL+"[submitter:condor] {} is _not_ a valid key for the dataset id {}.\nPlease, check your JSON file."+color.ENDC+"\n").format(str(key), str(self.count_key))
             exit()
         else:
-            print("\n"+color.FAIL+"[gridtool] JSON file is not correct.\nPlease, check it."+color.ENDC+"\n")
+            print("\n"+color.FAIL+"[submitter:condor] JSON file is not correct.\nPlease, check it."+color.ENDC+"\n")
             exit()
 
         check = int(self.count_key)/int(self.count_data)
         if not (check==NBLOCKS):
-            error_message = '\n'+color.FAIL+'[gridtool] Defined {} keys instead of a total of {} keys in your JSON file.\n'\
+            error_message = '\n'+color.FAIL+'[submitter:condor] Defined {} keys instead of a total of {} keys in your JSON file.\n'\
                             'In case you are sure the file has the exactly number of parameters you need, you should re-define NBLOCKS in the code accordinly.'\
                             '\nPlease, correct it instead.'+color.ENDC+'\n'
             print(error_message).format(check, NBLOCKS)
             exit()
  
         if verbose:
-         print "\n[gridtool] Reading file...\n"
+         print "\n[submitter:condor] Reading file...\n"
          print(color.BOLD + json.dumps(self.data, indent=4, sort_keys=True) + color.ENDC)
          print "\n"
 
-    def submit(self, config):
+    def submit(self, command):
         try:
-            crabCommand('submit', config = config)
+         with open("job_condor_tmp.sub", "w") as fout:
+          fout.write(command)
+          os.system(condor_server+" condor_submit job_condor_tmp.sub")
+          os.system("rm job_condor_tmp.sub")
         except HTTPException as hte:
             print "Failed submitting task: %s" % (hte.headers)
         except ClientException as cle:
             print "Failed submitting task: %s" % (cle)
 
+    def fromListToString(self,list_set, withComma):
+     outStr=""
+     unique_list = (list(list_set))
+     counter = 0
+     for x in unique_list:
+      if withComma:
+       if counter > 0:
+        outStr += ", "+x
+       else:
+        outStr += x
+      else:
+        outStr += " "+x
+      counter += 1
+     return outStr
+
     def prepareSubmission(self):
 
      if "datasets" in self.data:
       for p in self.data["datasets"]:
-
-       self.config=config()
-
-       timestr = time.strftime("%Y-%m-%d_UTC%H-%M-%S")
 
        print "\n\t" + color.BOLD + "id: " + color.ENDC,
        print "\t" + color.OKGREEN + str(p["id"]) + color.ENDC
@@ -134,26 +138,14 @@ class Parser():
        print "\t" + color.BOLD + "enable: " + color.ENDC,
        print "\t" + color.OKGREEN + str(p["enable"]) + color.ENDC
 
-       print "\t" + color.BOLD + "localpath: " + color.ENDC,
-       print "\t" + color.OKGREEN + str(p["localpath"]) + color.ENDC
+       print "\t" + color.BOLD + "inputfolder: " + color.ENDC,
+       print "\t" + color.OKGREEN + str(p["inputfolder"]) + color.ENDC
  
-       print "\t" + color.BOLD + "eospath: " + color.ENDC,
-       print "\t" + color.OKGREEN + str(p["eospath"]) + color.ENDC
+       print "\t" + color.BOLD + "executable: " + color.ENDC,
+       print "\t" + color.OKGREEN + str(p["executable"]) + color.ENDC
 
-       print "\t" + color.BOLD + "name: " + color.ENDC,
-       print "\t" + color.OKGREEN + str(p["name"]) + color.ENDC
-
-       print "\t" + color.BOLD + "sample: " + color.ENDC,
-       print "\t" + color.OKGREEN + str(p["sample"]) + color.ENDC
-
-       print "\t" + color.BOLD + "mode: " + color.ENDC,
-       print "\t" + color.OKGREEN + str(p["mode"]) + color.ENDC
-
-       print "\t" + color.BOLD + "lumimask: " + color.ENDC,
-       print "\t" + color.OKGREEN + str(p["lumimask"]) + color.ENDC
-
-       print "\t" + color.BOLD + "config: " + color.ENDC,
-       print "\t" + color.OKGREEN + str(p["config"]) + color.ENDC
+       print "\t" + color.BOLD + "inputfiles: " + color.ENDC,
+       print "\t" + color.OKGREEN + str(p["inputfiles"]) + color.ENDC
 
        print "\t" + color.BOLD + "parameters: " + color.ENDC,
        print "\t" + color.OKGREEN + str(p["parameters"]) + color.ENDC
@@ -161,72 +153,54 @@ class Parser():
        print "\t" + color.BOLD + "output: " + color.ENDC,
        print "\t" + color.OKGREEN + str(p["output"]) + color.ENDC
 
-       print "\t" + color.BOLD + "unitsperjob: " + color.ENDC,
-       print "\t" + color.OKGREEN + str(p["unitsperjob"]) + color.ENDC
+       par_executable = self.fromListToString(p["parameters"], False)
+       par_input_files = self.fromListToString(p["inputfiles"], True)
 
-       print "\t" + color.BOLD + "site: " + color.ENDC,
-       print "\t" + color.OKGREEN + str(p["site"]) + color.ENDC
+       # Condor commands
+       command =  "initialdir\t\t\t= "+str(p["output"])+"\n"
+       command += "executable\t\t\t= ./MissingMassNtupleAnalyzer\n"
+       command += "arguments\t\t\t= "+str(par_executable)+ "\n"
+       command += "transfer_input_files\t\t\t= "+str(par_input_files) + "\n"
+       command += "output\t\t\t= execution.$(ClusterId).$(ProcId).out\n"
+       command += "error\t\t\t= fail.$(ClusterId).$(ProcId).err\n"
+       command += "log\t\t\t= status.$(ClusterId).$(ProcId).log\n"
+       command += "getenv\t\t\t= True\n"
 
-       tagname = 'crab_%s_%s' % (getpass.getuser(), timestr)
-       localpath = '%s/%s' % (p["localpath"], tagname)
-       eospath = '%s/%s' % (p["eospath"], tagname)
+       ###########################
+       # espresso     = 20 minutes
+       # microcentury = 1 hour
+       # longlunch    = 2 hours
+       # workday      = 8 hours
+       # tomorrow     = 1 day
+       # testmatch    = 3 days
+       # nextweek     = 1 week
+       ##########################
 
-       # Crab common paratemers 
-       self.config.JobType.psetName = p["config"]
-       self.config.JobType.pyCfgParams = [str(p["parameters"])]
-       self.config.JobType.outputFiles = [str(p["output"])]
-       self.config.Data.outLFNDirBase = eospath
-       self.config.General.transferOutputs = True
-       self.config.General.requestName = tagname
-       self.config.General.workArea = localpath
-       self.config.Site.storageSite = p["site"]
+       command += "+JobFlavour\t\t\t= \"workday\"\n"
+       command += "requirements\t\t\t = (OpSysAndVer =?= \"CentOS7\")\n"
 
-       # Crab parameters for each submission case
-       if p["mode"] == "data_analysis":
-        self.config.JobType.pluginName = 'Analysis'
-        self.config.Data.inputDataset = p["sample"]
-        self.config.Data.inputDBS = 'global'
-        self.config.Data.splitting = 'LumiBased'
-        self.config.Data.unitsPerJob = 20
-        self.config.Data.publication = False
-        self.config.Data.lumiMask = p["lumimask"]
-        self.config.General.transferLogs = True
-       elif p["mode"] == "mc_analysis":
-        self.config.JobType.pluginName = 'Analysis'
-        self.config.Data.inputDataset = p["sample"]
-        self.config.Data.inputDBS = 'global'
-        self.config.Data.splitting = 'LumiBased'
-        self.config.Data.unitsPerJob = 20
-        self.config.Data.publication = False
-        self.config.Data.lumiMask = p["lumimask"]
-        self.config.General.transferLogs = True
-       elif p["mode"] == "mc_private_hadron_production":
-        self.config.JobType.pluginName = 'PrivateMC'
-        self.config.Data.outputPrimaryDataset = p["name"]
-        self.config.Data.inputDBS = 'phys03'
-        self.config.Data.splitting = 'EventBased'
-        self.config.Data.unitsPerJob = p["unitsperjob"]
-        self.config.Data.totalUnits = NJOBS * self.config.Data.unitsPerJob
-        self.config.Data.publication = True
-        self.config.General.transferLogs = False
-       elif p["mode"] == "mc_private_production":
-        self.config.Data.inputDataset = p["sample"]
-        self.config.JobType.pluginName = 'Analysis'
-        self.config.Data.outputDatasetTag = p["name"] 
-        self.config.Data.inputDBS = 'phys03'
-        self.config.Data.splitting = 'FileBased'
-        self.config.Data.unitsPerJob = p["unitsperjob"]
-        self.config.Data.publication = True
-        self.config.General.transferLogs = False
-       else:
-        print("\n"+color.WARNING+"[gridtool] mode {} is not defined.\nJobs have not been configured for the task id {}."+color.ENDC+"\n").format(p["mode"], p["id"])
-        continue
+       if gridenable: 
+        command += "Universe\t\t\t= grid\n"
+        command += "Should_Transfer_Files\t\t\t = YES\n"
+        command += "when_to_transfer_output\t\t\t = ON_EXIT_OR_EVICT\n"
+        command += "x509userproxy\t\t\t = /tmp/x509up_u30993\n"
+        command += "use_x509userproxy\t\t\t = true\n"
+        command += "grid_resource\t\t\t= condor osgce2.hepgrid.uerj.br osgce2.hepgrid.uerj.br:9619\n"
+        command += "+remote_jobuniverse\t\t\t= 5\n"
+        command += "+remote_requirements\t\t\t= True\n"
+        command += "+remote_ShouldTransferFiles\t\t\t= \"YES\"\n"
+        command += "+remote_WhenToTransferOutput\t\t\t= \"ON_EXIT\"\n"
+        command += "accounting_group_user\t\t\t= dmf\n"
+        command += "accounting_group\t\t\t= group_uerj\n"
+        command += "RequestCpus\t\t\t = 4\n"
+        command += "+MaxRuntime\t\t\t = 7200\n"
+        command += "max_transfer_input_mb\t\t\t = 2048\n"
+        command += "max_transfer_output_mb\t\t\t = 2048\n"
+
+       command += "queue filename matching("+p["inputfolder"]+"*.root)\n"
 
        if int(p["enable"]):
-        p = Process(target=self.submit, args=(self.config,))
-        p.start()
-        p.join()
+        self.submit(command)
        else:
         print "\t" + color.BOLD + color.HEADER + "-- Submittion not enabled --" + color.ENDC
-
        print("\n")

@@ -42,8 +42,6 @@ from CRABClient.UserUtilities import config
 from httplib import HTTPException
 from multiprocessing import Process
 
-#config=config()
-
 color = colors.Paint()
 NBLOCKS = 13 # number of keys per dataset block.
 NJOBS = 8000 # fixed number of jobs for mc_private_production mode.
@@ -62,19 +60,19 @@ class Parser():
          try:
           self.data = json.load(json_file)
          except ValueError as err:
-          print("\n"+color.FAIL+"[gridtool] The file {} is not valid.\nPlease, check it."+color.ENDC+"\n").format(json_file)
+          print("\n"+color.FAIL+"[submitter:crab] The file {} is not valid.\nPlease, check it."+color.ENDC+"\n").format(json_file)
           exit()
 
         if "datasets" in self.data:
          for p in self.data["datasets"]:
           self.count_data = self.count_data + 1
           if "id" not in p:
-            print("\n"+color.FAIL+"[gridtool] The key \"id\" must be defined in each dataset bracket.\nPlease, check it."+color.ENDC+"\n")
+            print("\n"+color.FAIL+"[submitter:crab] The key \"id\" must be defined in each dataset bracket.\nPlease, check it."+color.ENDC+"\n")
             exit()
           else:
             check_id = isinstance(p["id"], int)
             if not check_id:
-             print("\n"+color.FAIL+"[gridtool] The key \"id\" must be integer. Id is defined as {}.\nPlease, check it."+color.ENDC+"\n").format(type(p["id"]))
+             print("\n"+color.FAIL+"[submitter:crab] The key \"id\" must be integer. Id is defined as {}.\nPlease, check it."+color.ENDC+"\n").format(type(p["id"]))
              exit()
           for key in p:
            if "id" == key or\
@@ -92,22 +90,22 @@ class Parser():
               "site" == key:
             self.count_key = self.count_key + 1
            else:
-            print("\n"+color.FAIL+"[gridtool] {} is _not_ a valid key for the dataset id {}.\nPlease, check your JSON file."+color.ENDC+"\n").format(str(key), str(self.count_key))
+            print("\n"+color.FAIL+"[submitter:crab] {} is _not_ a valid key for the dataset id {}.\nPlease, check your JSON file."+color.ENDC+"\n").format(str(key), str(self.count_key))
             exit()
         else:
-            print("\n"+color.FAIL+"[gridtool] JSON file is not correct.\nPlease, check it."+color.ENDC+"\n")
+            print("\n"+color.FAIL+"[submitter:crab] JSON file is not correct.\nPlease, check it."+color.ENDC+"\n")
             exit()
 
         check = int(self.count_key)/int(self.count_data)
         if not (check==NBLOCKS):
-            error_message = '\n'+color.FAIL+'[gridtool] Defined {} keys instead of a total of {} keys in your JSON file.\n'\
+            error_message = '\n'+color.FAIL+'[submitter:crab] Defined {} keys instead of a total of {} keys in your JSON file.\n'\
                             'In case you are sure the file has the exactly number of parameters you need, you should re-define NBLOCKS in the code accordinly.'\
                             '\nPlease, correct it instead.'+color.ENDC+'\n'
             print(error_message).format(check, NBLOCKS)
             exit()
  
         if verbose:
-         print "\n[gridtool] Reading file...\n"
+         print "\n[submitter:crab] Reading file...\n"
          print(color.BOLD + json.dumps(self.data, indent=4, sort_keys=True) + color.ENDC)
          print "\n"
 
@@ -219,7 +217,7 @@ class Parser():
         self.config.Data.publication = True
         self.config.General.transferLogs = False
        else:
-        print("\n"+color.WARNING+"[gridtool] mode {} is not defined.\nJobs have not been configured for the task id {}."+color.ENDC+"\n").format(p["mode"], p["id"])
+        print("\n"+color.WARNING+"[submitter:crab] mode {} is not defined.\nJobs have not been configured for the task id {}."+color.ENDC+"\n").format(p["mode"], p["id"])
         continue
 
        if int(p["enable"]):

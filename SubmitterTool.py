@@ -32,7 +32,7 @@ print("\nRunning Grid Tool Submission\n")
 
 if "PYTHONPATH" in os.environ:
     pythonpath = os.getenv("PYTHONPATH")
-    print("\t >> PYTHONPATH is defined as {}.\n".format(pythonpath))
+    print("\t >> PYTHONPATH is defined as {}.".format(pythonpath))
 else:
     print("\t >> Please, source the script to enable crab library\n\t\t >> i.e.: source /cvmfs/cms.cern.ch/common/crab-setup.sh\n")
     exit()
@@ -48,6 +48,7 @@ else:
 from cmd import Cmd
 from submitter import colors
 from submitter import gridlibrary
+from submitter import condorlibrary
 from optparse import OptionParser
 
 import CRABClient
@@ -62,7 +63,7 @@ def getOptions():
     usage = "usage: %prog [options]"
     parser = OptionParser(usage=usage)
     parser.add_option("-f", "--filename",
-                  metavar="FILE", help="JSON mapping file", default='samples.json')
+                  metavar="FILE", help="JSON mapping file", default='samples_crab.json')
     parser.add_option("-p", "--parsing",
                   help="parsing: commands which can be passed from SHELL directly. [parsing: --p \"submit --file samples.json\"]")
 
@@ -74,12 +75,37 @@ def getOptions():
     return options
 
 class MyPrompt(Cmd):
-    prompt = 'crab_submission> '
-    intro = "Type ? to list commands"
  
+    swcrab = True
+    swcondor = False
+
+    prompt = 'jobs_submission> '
+    intro = "Type ? to list commands. By default, mode crab is active. To change it, type mode condor||crab <enter>."
+ 
+    def do_mode(self, arg): 
+     argcmd = arg.split()
+     if not argcmd:
+      argcmd.append("")
+     if "crab" in argcmd[0]:
+      self.swcrab = True
+      self.swcondor = False
+      status_sel = "\n\t" + color.OKGREEN + "Mode Crab Selected\n" + color.ENDC
+      print(status_sel)
+     elif "condor" in argcmd[0]:
+      self.swcrab = False
+      self.swcondor = True
+      status_sel = "\n\t" + color.OKGREEN + "Mode Condor Selected\n" + color.ENDC
+      print(status_sel)
+     else:
+      print("[submitter] Nothing done. This option does not exist! Please, try again using mode crab||condor. By default, crab mode is selected.\n\n")
+
+    def help_activate(self): 
+      print(color.HEADER + "\n\nThis command is used to select the mode crab or condor for submission.\n\n")
+      print("\n [submitter] Mode crab|condor <enter>\n" + color.ENDC)
+
     def do_exit(self, inp):
-        print("\n [submitter] Exiting...\n")
-        return True
+      print("\n [submitter] Exiting...\n")
+      return True
     
     def help_exit(self):
         print('[submitter] exit the application. Shorthand: x q Ctrl-D.')
@@ -95,16 +121,28 @@ class MyPrompt(Cmd):
                                 filename=str(i)
 
 		if os.path.exists(filename):
+                       if self.swcrab:
 	        	json = gridlibrary.Parser(filename, options.verbose)
 	        	json.prepareSubmission()
-		
+                       elif self.swcondor:
+	        	json = condorlibrary.Parser(filename, options.verbose)
+	        	json.prepareSubmission()
+                       else:       
+                        print('[submitter] mode <option> is not recognized.')
+
 		else:
         	        print color.FAIL+color.BOLD+'\t[submitter] JSON file does not exist or wrong path! Please use the option --file filename.json or run the application again with the option --f filename.json'+color.ENDC+color.HEADER+color.ENDC
 
 	else:
+               if self.swcrab:
                 json = gridlibrary.Parser(options.filename, options.verbose)
                 json.prepareSubmission()
-	
+               elif self.swcondor:	
+                json = condorlibrary.Parser(options.filename, options.verbose)
+                json.prepareSubmission()
+               else:
+                print('[submitter] mode <option> is not recognized.')
+      
     def help_submit(self):
         print("\n\nUse the options --file filename.json\n\tEx: submit --file filename.json <press enter>\n\n")
 
@@ -124,8 +162,6 @@ if __name__ == '__main__':
 
     color = colors.Paint()
     options = getOptions()
-
-    #config = config()
 
     if options.parsing:
 	MyPrompt().onecmd(''.join(options.parsing))
