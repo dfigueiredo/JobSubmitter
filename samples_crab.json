@@ -1,0 +1,112 @@
+{
+    "datasets": [
+        {
+            "eospath": "/store/user/dmf", 
+            "enable": 0, 
+            "unitsperjob": 250, 
+            "localpath": "/afs/cern.ch/user/d/dmf/private/work/private/CMSPhysicsAnalysis/PrivateMCProduction/PPSMCProduction/working", 
+            "lumimask": "", 
+            "sample": "", 
+            "id": 0, 
+            "name": "PYTHIA8-SD-TOP-GEN", 
+            "parameters": [
+                "--Mode=Muon", 
+                "--Era=B"
+            ], 
+            "mode": "mc_private_hadron_production", 
+            "site": "T2_US_Wisconsin", 
+            "output": "RunIISummer20UL17GEN.root", 
+            "config": "/afs/cern.ch/user/d/dmf/private/work/private/CMSPhysicsAnalysis/PrivateMCProduction/PPSMCProduction/working/SD-TOP-PYTHIA8_cfg.py"
+        }, 
+        {
+            "eospath": "/store/user/dmf", 
+            "enable": 0, 
+            "unitsperjob": 1, 
+            "localpath": "/afs/cern.ch/user/d/dmf/private/work/private/CMSPhysicsAnalysis/PrivateMCProduction/PPSMCProduction/working", 
+            "lumimask": "", 
+            "sample": "/PYTHIA8-SD-TOP-GEN/dmf-crab_crab_dmf_2021-04-23_UTC20-01-50-90b9c105ac810048514e168d042afef5/USER", 
+            "id": 1, 
+            "name": "PYTHIA8-SD-TOP-GEN-SIM-13TEV", 
+            "parameters": [
+                "--Mode=Muon", 
+                "--Era=B"
+            ], 
+            "mode": "mc_private_production", 
+            "site": "T2_US_Wisconsin", 
+            "output": "RunIISummer20UL17SIM.root", 
+            "config": "/afs/cern.ch/user/d/dmf/private/work/private/CMSPhysicsAnalysis/PrivateMCProduction/PPSMCProduction/working/RunIISummer20UL17SIM_cfg.py"
+        }, 
+        {
+            "eospath": "/store/user/dmf", 
+            "enable": 0, 
+            "unitsperjob": 1, 
+            "localpath": "/afs/cern.ch/user/d/dmf/private/work/private/CMSPhysicsAnalysis/PrivateMCProduction/PPSMCProduction/working", 
+            "lumimask": "", 
+            "sample": "/PYTHIA8-SD-TOP-GEN/dmf-PYTHIA8-SD-TOP-GEN-SIM-13TEV-9ac963e13542f33a83ae9ec7fd4ed8d4/USER", 
+            "id": 2, 
+            "name": "PYTHIA8-SD-TOP-DIGI-PREMIX-13TEV", 
+            "parameters": [
+                "--Mode=Muon", 
+                "--Era=B"
+            ], 
+            "mode": "mc_private_production", 
+            "site": "T2_US_Wisconsin", 
+            "output": "TOP-RunIISummer20UL17DIGIPremix.root", 
+            "config": "/afs/cern.ch/user/d/dmf/private/work/private/CMSPhysicsAnalysis/PrivateMCProduction/PPSMCProduction/working/RunIISummer20UL17DIGIPremix_cfg.py"
+        }, 
+        {
+            "eospath": "/store/user/dmf", 
+            "enable": 0, 
+            "unitsperjob": 1, 
+            "localpath": "/afs/cern.ch/user/d/dmf/private/work/private/CMSPhysicsAnalysis/PrivateMCProduction/PPSMCProduction/working", 
+            "lumimask": "", 
+            "sample": "/PYTHIA8-SD-TOP-GEN/dmf-PYTHIA8-SD-TOP-DIGI-PREMIX-13TEV-1a28be96f8c2ebca4e8c73b389c5e19a/USER", 
+            "id": 3, 
+            "name": "PYTHIA8-SD-TOP-HLT-13TEV", 
+            "parameters": [
+                "--Mode=Muon", 
+                "--Era=B"
+            ], 
+            "mode": "mc_private_production", 
+            "site": "T2_US_Wisconsin", 
+            "output": "RunIISummer20UL17HLT.root", 
+            "config": "/afs/cern.ch/user/d/dmf/private/work/private/CMSPhysicsAnalysis/PrivateMCProduction/PPSMCProduction/working/RunIISummer20UL17HLT_cfg.py"
+        }, 
+        {
+            "eospath": "/store/user/dmf", 
+            "enable": 0, 
+            "unitsperjob": 1, 
+            "localpath": "/afs/cern.ch/user/d/dmf/private/work/private/CMSPhysicsAnalysis/PrivateMCProduction/PPSMCProduction/working", 
+            "lumimask": "", 
+            "sample": "/PYTHIA8-SD-TOP-GEN/dmf-PYTHIA8-SD-TOP-HLT-13TEV-1cba7fad1227c919886864247a60b1e3/USER", 
+            "id": 4, 
+            "name": "PYTHIA8-SD-TOP-RECO-13TEV", 
+            "parameters": [
+                "--Mode=Muon", 
+                "--Era=B"
+            ], 
+            "mode": "mc_private_production", 
+            "site": "T2_US_Wisconsin", 
+            "output": "RunIISummer20UL17RECO.root", 
+            "config": "/afs/cern.ch/user/d/dmf/private/work/private/CMSPhysicsAnalysis/PrivateMCProduction/PPSMCProduction/working/RunIISummer20UL17RECO_cfg.py"
+        }, 
+        {
+            "eospath": "/store/user/dmf", 
+            "enable": 1, 
+            "unitsperjob": 1, 
+            "localpath": "/afs/cern.ch/user/d/dmf/private/work/private/CMSPhysicsAnalysis/PrivateMCProduction/PPSMCProduction/working", 
+            "lumimask": "", 
+            "sample": "/PYTHIA8-SD-TOP-GEN/dmf-PYTHIA8-SD-TOP-RECO-13TEV-586b03e1195149d852222d5063e2a23c/USER", 
+            "id": 5, 
+            "name": "PYTHIA8-SD-TOP-MINIAOD-13TEV", 
+            "parameters": [
+                "--Mode=Muon", 
+                "--Era=B"
+            ], 
+            "mode": "mc_private_production", 
+            "site": "T2_US_Wisconsin", 
+            "output": "RunIISummer20UL17MiniAOD.root", 
+            "config": "/afs/cern.ch/user/d/dmf/private/work/private/CMSPhysicsAnalysis/PrivateMCProduction/PPSMCProduction/working/RunIISummer20UL17MiniAOD_cfg.py"
+        }
+    ]
+}
