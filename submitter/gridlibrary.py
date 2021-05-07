@@ -43,7 +43,7 @@ from httplib import HTTPException
 from multiprocessing import Process
 
 color = colors.Paint()
-NBLOCKS = 13 # number of keys per dataset block.
+NBLOCKS = 14 # number of keys per dataset block.
 NJOBS = 8000 # fixed number of jobs for mc_private_production mode.
 
 class Parser():
@@ -85,6 +85,7 @@ class Parser():
               "lumimask" == key or\
               "config" == key or\
               "parameters" == key or\
+              "input" == key or\
               "output" == key or\
               "unitsperjob" == key or\
               "site" == key:
@@ -116,7 +117,7 @@ class Parser():
             print "Failed submitting task: %s" % (hte.headers)
         except ClientException as cle:
             print "Failed submitting task: %s" % (cle)
-
+ 
     def prepareSubmission(self):
 
      if "datasets" in self.data:
@@ -156,6 +157,9 @@ class Parser():
        print "\t" + color.BOLD + "parameters: " + color.ENDC,
        print "\t" + color.OKGREEN + str(p["parameters"]) + color.ENDC
 
+       print "\t" + color.BOLD + "input: " + color.ENDC,
+       print "\t" + color.OKGREEN + str(p["input"]) + color.ENDC
+
        print "\t" + color.BOLD + "output: " + color.ENDC,
        print "\t" + color.OKGREEN + str(p["output"]) + color.ENDC
 
@@ -169,10 +173,31 @@ class Parser():
        localpath = '%s/%s' % (p["localpath"], tagname)
        eospath = '%s/%s' % (p["eospath"], tagname)
 
-       # Crab common paratemers 
+       if (isinstance(p["parameters"], list)):
+         par_ = p["parameters"]
+         self.config.JobType.pyCfgParams = []
+         for i in range(len(par_)):
+          self.config.JobType.pyCfgParams.append(str(par_[i]))
+       else:
+          self.config.JobType.pyCfgParams = [str(p["parameters"])]
+
+       if (isinstance(p["input"], list)):
+         input_ = p["input"]
+         self.config.JobType.inputFiles = []
+         for i in range(len(input_)):
+          self.config.JobType.inputFiles.append(str(input_[i]))
+       else:
+          self.config.JobType.inputFiles = [str(p["input"])]
+
+       if (isinstance(p["output"], list)):
+         out_ = p["output"]
+         self.config.JobType.outputFiles = []
+         for i in range(len(out_)):
+          self.config.JobType.outputFiles.append(str(out_[i]))
+       else:
+         self.config.JobType.outputFiles = [str(p["output"])]
+
        self.config.JobType.psetName = p["config"]
-       self.config.JobType.pyCfgParams = [str(p["parameters"])]
-       self.config.JobType.outputFiles = [str(p["output"])]
        self.config.Data.outLFNDirBase = eospath
        self.config.General.transferOutputs = True
        self.config.General.requestName = tagname
