@@ -122,7 +122,7 @@ data['datasets'].append({
 
 data['datasets'].append({
     'id': 6,
-    'enable': 1,
+    'enable': 0,
     'localpath': "/afs/cern.ch/user/d/dmf/private/work/private/CMSPhysicsAnalysis/PrivateMCProduction/PPSMCProduction/working",
     'eospath': "/store/user/dmf",
     'name': "PYTHIA8-SD-TOP-MINIAOD-withpps-13TEV",
@@ -135,6 +135,23 @@ data['datasets'].append({
     'output':("output.root"),
     'unitsperjob': 1,
     'site': "T2_US_Wisconsin",
+})
+
+data['datasets'].append({
+    'id': 7,
+    'enable': 1,
+    'localpath': "/afs/cern.ch/user/d/dmf/private/work/private/CMSPhysicsAnalysis/DarkMatterSearch/2021/NTuplizer/CMSSW_10_6_17_patch1/src/PPSFramework/working",
+    'eospath': "/store/group/phys_exotica/PPS-Exo/Grid",
+    'name': "PYTHIA8-SD-TOP-13TEV",
+    'sample': "/PYTHIA8-SD-TOP-GEN/dmf-PYTHIA8-SD-TOP-MINIAOD-withpps-13TEV-c1a41892bad32b8e981acbdc0a984950/USER",
+    'mode': "mc_analysis",
+    'lumimask': "",
+    'config': "/afs/cern.ch/user/d/dmf/private/work/private/CMSPhysicsAnalysis/DarkMatterSearch/2021/NTuplizer/CMSSW_10_6_17_patch1/src/PPSFramework/Skimmer/test/RunMissingMassSearches.py",
+    'parameters':("ppstagging=True", "physics=muon","mode=mc","trigger=False"),
+    'input': (""),
+    'output':("output.root"),
+    'unitsperjob': 10,
+    'site': "T2_CH_CERN",
 })
 
 print(json.dumps(data, indent=4))

@@ -98,7 +98,7 @@
         }, 
         {
             "eospath": "/store/user/dmf", 
-            "enable": 1, 
+            "enable": 0, 
             "unitsperjob": 1, 
             "localpath": "/afs/cern.ch/user/d/dmf/private/work/private/CMSPhysicsAnalysis/PrivateMCProduction/PPSMCProduction/working", 
             "lumimask": "", 
@@ -118,6 +118,27 @@
                 "/afs/cern.ch/user/d/dmf/private/work/private/CMSPhysicsAnalysis/PrivateMCProduction/PPSMCProduction/working/CrossingAngles2018.root"
             ], 
             "config": "/afs/cern.ch/user/d/dmf/private/work/private/CMSPhysicsAnalysis/PrivateMCProduction/PPSMCProduction/working/PPS-Objects.py"
+        }, 
+        {
+            "eospath": "/store/group/phys_exotica/PPS-Exo/Grid", 
+            "enable": 1, 
+            "unitsperjob": 10, 
+            "localpath": "/afs/cern.ch/user/d/dmf/private/work/private/CMSPhysicsAnalysis/DarkMatterSearch/2021/NTuplizer/CMSSW_10_6_17_patch1/src/PPSFramework/working", 
+            "lumimask": "", 
+            "sample": "/PYTHIA8-SD-TOP-GEN/dmf-PYTHIA8-SD-TOP-MINIAOD-withpps-13TEV-c1a41892bad32b8e981acbdc0a984950/USER", 
+            "output": "output.root", 
+            "id": 7, 
+            "name": "PYTHIA8-SD-TOP-13TEV", 
+            "parameters": [
+                "ppstagging=True", 
+                "physics=muon", 
+                "mode=mc", 
+                "trigger=False"
+            ], 
+            "mode": "mc_analysis", 
+            "site": "T2_CH_CERN", 
+            "input": "", 
+            "config": "/afs/cern.ch/user/d/dmf/private/work/private/CMSPhysicsAnalysis/DarkMatterSearch/2021/NTuplizer/CMSSW_10_6_17_patch1/src/PPSFramework/Skimmer/test/RunMissingMassSearches.py"
         }
     ]
 }

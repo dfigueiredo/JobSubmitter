@@ -110,6 +110,12 @@ class Parser():
          print(color.BOLD + json.dumps(self.data, indent=4, sort_keys=True) + color.ENDC)
          print "\n"
 
+    def is_empty_or_blank(self,msg):
+        """ This function checks if given string is empty
+        or contain only shite spaces"""
+        return re.search("^\s*$", msg)
+
+
     def submit(self, config):
         try:
             crabCommand('submit', config = config)
@@ -173,29 +179,32 @@ class Parser():
        localpath = '%s/%s' % (p["localpath"], tagname)
        eospath = '%s/%s' % (p["eospath"], tagname)
 
-       if (isinstance(p["parameters"], list)):
+       if (isinstance(p["parameters"], list)) and not any([self.is_empty_or_blank(elem) for elem in p["parameters"]]):
          par_ = p["parameters"]
          self.config.JobType.pyCfgParams = []
          for i in range(len(par_)):
           self.config.JobType.pyCfgParams.append(str(par_[i]))
        else:
-          self.config.JobType.pyCfgParams = [str(p["parameters"])]
+          if str(p["parameters"]):
+           self.config.JobType.pyCfgParams = [str(p["parameters"])]
 
-       if (isinstance(p["input"], list)):
+       if (isinstance(p["input"], list)) and not any([self.is_empty_or_blank(elem) for elem in p["input"]]):
          input_ = p["input"]
          self.config.JobType.inputFiles = []
          for i in range(len(input_)):
           self.config.JobType.inputFiles.append(str(input_[i]))
        else:
-          self.config.JobType.inputFiles = [str(p["input"])]
+          if str(p["input"]): 
+           self.config.JobType.inputFiles = [str(p["input"])]
 
-       if (isinstance(p["output"], list)):
+       if (isinstance(p["output"], list)) and not any([self.is_empty_or_blank(elem) for elem in p["output"]]):
          out_ = p["output"]
          self.config.JobType.outputFiles = []
          for i in range(len(out_)):
           self.config.JobType.outputFiles.append(str(out_[i]))
        else:
-         self.config.JobType.outputFiles = [str(p["output"])]
+         if str(p["output"]):
+          self.config.JobType.outputFiles = [str(p["output"])]
 
        self.config.JobType.psetName = p["config"]
        self.config.Data.outLFNDirBase = eospath
