@@ -130,12 +130,12 @@
             "id": 7, 
             "name": "PYTHIA8-SD-TOP-13TEV", 
             "parameters": [
-                "ppstagging=True", 
+                "ppstagging=False", 
                 "physics=muon", 
                 "mode=mc", 
                 "trigger=False"
             ], 
-            "mode": "mc_analysis", 
+            "mode": "mc_private_analysis", 
             "site": "T2_CH_CERN", 
             "input": "", 
             "config": "/afs/cern.ch/user/d/dmf/private/work/private/CMSPhysicsAnalysis/DarkMatterSearch/2021/NTuplizer/CMSSW_10_6_17_patch1/src/PPSFramework/Skimmer/test/RunMissingMassSearches.py"

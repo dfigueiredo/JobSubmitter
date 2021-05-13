@@ -176,8 +176,8 @@ class Parser():
        print "\t" + color.OKGREEN + str(p["site"]) + color.ENDC
 
        tagname = 'crab_%s_%s' % (getpass.getuser(), timestr)
-       localpath = '%s/%s' % (p["localpath"], tagname)
-       eospath = '%s/%s' % (p["eospath"], tagname)
+       localpath = '%s/%s/%s' % (p["localpath"], str(p["name"]), tagname)
+       eospath = '%s/%s/%s' % (p["eospath"], str(p["name"]), tagname)
 
        if (isinstance(p["parameters"], list)) and not any([self.is_empty_or_blank(elem) for elem in p["parameters"]]):
          par_ = p["parameters"]
@@ -216,25 +216,33 @@ class Parser():
        # Crab parameters for each submission case
        if p["mode"] == "data_analysis":
         self.config.JobType.pluginName = 'Analysis'
-        self.config.Data.inputDataset = p["sample"]
+        self.config.Data.inputDataset = str(p["sample"])
         self.config.Data.inputDBS = 'global'
         self.config.Data.splitting = 'LumiBased'
         self.config.Data.unitsPerJob = 20
         self.config.Data.publication = False
-        self.config.Data.lumiMask = p["lumimask"]
+        self.config.Data.lumiMask = str(p["lumimask"])
         self.config.General.transferLogs = True
        elif p["mode"] == "mc_analysis":
         self.config.JobType.pluginName = 'Analysis'
-        self.config.Data.inputDataset = p["sample"]
+        self.config.Data.inputDataset = str(p["sample"])
         self.config.Data.inputDBS = 'global'
-        self.config.Data.splitting = 'LumiBased'
+        self.config.Data.splitting = 'FileBased'
         self.config.Data.unitsPerJob = 20
         self.config.Data.publication = False
-        self.config.Data.lumiMask = p["lumimask"]
+        self.config.Data.lumiMask = str(p["lumimask"])
+        self.config.General.transferLogs = True
+       elif p["mode"] == "mc_private_analysis":
+        self.config.JobType.pluginName = 'Analysis'
+        self.config.Data.inputDataset = str(p["sample"])
+        self.config.Data.inputDBS = 'phys03'
+        self.config.Data.splitting = 'FileBased'
+        self.config.Data.unitsPerJob = 20
+        self.config.Data.publication = False
         self.config.General.transferLogs = True
        elif p["mode"] == "mc_private_hadron_production":
         self.config.JobType.pluginName = 'PrivateMC'
-        self.config.Data.outputPrimaryDataset = p["name"]
+        self.config.Data.outputPrimaryDataset = str(p["name"])
         self.config.Data.inputDBS = 'phys03'
         self.config.Data.splitting = 'EventBased'
         self.config.Data.unitsPerJob = p["unitsperjob"]
@@ -242,9 +250,9 @@ class Parser():
         self.config.Data.publication = True
         self.config.General.transferLogs = False
        elif p["mode"] == "mc_private_production":
-        self.config.Data.inputDataset = p["sample"]
+        self.config.Data.inputDataset = str(p["sample"])
         self.config.JobType.pluginName = 'Analysis'
-        self.config.Data.outputDatasetTag = p["name"] 
+        self.config.Data.outputDatasetTag = str(p["name"])
         self.config.Data.inputDBS = 'phys03'
         self.config.Data.splitting = 'FileBased'
         self.config.Data.unitsPerJob = p["unitsperjob"]
