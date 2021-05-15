@@ -16,8 +16,8 @@
                 "../proton_reco_rphorizontal_Electron_era_B_xa_120.txt", 
                 "../proton_reco_rphorizontal_Electron_era_B_xa_130.txt"
             ], 
-            "output": "BJets_data_era_B/", 
-            "inputfolder": "/eos/cms/store/group/phys_exotica/PPS-Exo/crab_BTagCSV_B_2021-02-03_UTC11-46-13_2021-02-03_UTC11-46-13/BTagCSV/crab_BTagCSV_B_2021-02-03_UTC11-46-13/210203_104633/0000/", 
+            "output": "test/", 
+            "inputfolder": "/eos/cms/store/group/phys_exotica/PPS-Exo/Grid/crab_dmf_2021-05-12_UTC13-45-50/PYTHIA8-SD-TOP-GEN/crab_crab_dmf_2021-05-12_UTC13-45-50/210512_114606/0000/", 
             "id": 0
         }
     ]

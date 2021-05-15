@@ -175,6 +175,10 @@ class Parser():
        print "\t" + color.BOLD + "site: " + color.ENDC,
        print "\t" + color.OKGREEN + str(p["site"]) + color.ENDC
 
+       if not int(p["enable"]):
+        print "\t" + color.BOLD + color.HEADER + "-- Submittion not enabled --" + color.ENDC
+        continue
+
        tagname = 'crab_%s_%s' % (getpass.getuser(), timestr)
        localpath = '%s/%s/%s' % (p["localpath"], str(p["name"]), tagname)
        eospath = '%s/%s/%s' % (p["eospath"], str(p["name"]), tagname)
@@ -249,6 +253,31 @@ class Parser():
         self.config.Data.totalUnits = NJOBS * self.config.Data.unitsPerJob
         self.config.Data.publication = True
         self.config.General.transferLogs = False
+       elif p["mode"] == "mc_private_hadron_lhe_production":
+        # https://twiki.cern.ch/twiki/bin/view/CMSPublic/CRAB3AdvancedTopic
+        # https://twiki.cern.ch/twiki/bin/view/CMSPublic/CRAB3AdvancedTutorial#Exercise_5_LHE
+        try:
+         LHEEvents = input("\n\t" + color.BOLD + "Please, insert the number of the events into the LHE file (int) and type <enter>: " + color.ENDC)
+         print("\tLHE number of events: " + str(LHEEvents) + "\n")
+        except:
+         print("\t" + color.FAIL + "Wrong type. Restart this tool."+color.ENDC+"\n\n") 
+         exit()
+        if not (isinstance(LHEEvents, int)):
+         print("\t" + color.FAIL + "Wrong type. Restart this tool."+color.ENDC+"\n\n") 
+         exit()
+        nsplit = int(p["unitsperjob"])
+        if LHEEvents <= nsplit:
+         nsplit = int(0.1*LHEEvents)
+        self.config.JobType.pluginName = 'PrivateMC'
+        self.config.JobType.generator = 'lhe'
+        self.config.Data.outputPrimaryDataset = str(p["name"])
+        self.config.Data.inputDBS = 'phys03'
+        self.config.Data.splitting = 'EventBased'
+        self.config.Data.unitsPerJob = nsplit
+        self.config.Data.totalUnits = int(LHEEvents)
+        self.config.Data.publication = True
+        self.config.General.transferLogs = False
+        self.config.Site.whitelist = ["T2_CH_CERN"] 
        elif p["mode"] == "mc_private_production":
         self.config.Data.inputDataset = str(p["sample"])
         self.config.JobType.pluginName = 'Analysis'

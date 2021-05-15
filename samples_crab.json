@@ -105,7 +105,7 @@
             "sample": "/PYTHIA8-SD-TOP-GEN/dmf-PYTHIA8-SD-TOP-MINIAOD-13TEV-e67f9b5d033cede4d000433a2a96d4fb/USER", 
             "output": "output.root", 
             "id": 6, 
-            "name": "PYTHIA8-SD-TOP-MINIAOD-withpps-13TEV", 
+            "name": "PYTHIA8-SD-TOP-MINIAOD-eraD-withpps-13TEV", 
             "parameters": [
                 "era=B", 
                 "year=2017"
@@ -120,14 +120,37 @@
             "config": "/afs/cern.ch/user/d/dmf/private/work/private/CMSPhysicsAnalysis/PrivateMCProduction/PPSMCProduction/working/PPS-Objects.py"
         }, 
         {
-            "eospath": "/store/group/phys_exotica/PPS-Exo/Grid", 
+            "eospath": "/store/user/dmf", 
             "enable": 1, 
+            "unitsperjob": 1, 
+            "localpath": "/afs/cern.ch/user/d/dmf/private/work/private/CMSPhysicsAnalysis/PrivateMCProduction/PPSMCProduction/working", 
+            "lumimask": "", 
+            "sample": "/PYTHIA8-SD-TOP-GEN/dmf-PYTHIA8-SD-TOP-MINIAOD-13TEV-e67f9b5d033cede4d000433a2a96d4fb/USER", 
+            "output": "output.root", 
+            "id": 7, 
+            "name": "PYTHIA8-SD-TOP-MINIAOD-eraC-withpps-13TEV", 
+            "parameters": [
+                "era=C", 
+                "year=2017"
+            ], 
+            "mode": "mc_private_production", 
+            "site": "T2_US_Wisconsin", 
+            "input": [
+                "/afs/cern.ch/user/d/dmf/private/work/private/CMSPhysicsAnalysis/PrivateMCProduction/PPSMCProduction/working/CrossingAngles2016.root", 
+                "/afs/cern.ch/user/d/dmf/private/work/private/CMSPhysicsAnalysis/PrivateMCProduction/PPSMCProduction/working/CrossingAngles2017.root", 
+                "/afs/cern.ch/user/d/dmf/private/work/private/CMSPhysicsAnalysis/PrivateMCProduction/PPSMCProduction/working/CrossingAngles2018.root"
+            ], 
+            "config": "/afs/cern.ch/user/d/dmf/private/work/private/CMSPhysicsAnalysis/PrivateMCProduction/PPSMCProduction/working/PPS-Objects.py"
+        }, 
+        {
+            "eospath": "/store/group/phys_exotica/PPS-Exo/Grid", 
+            "enable": 0, 
             "unitsperjob": 10, 
             "localpath": "/afs/cern.ch/user/d/dmf/private/work/private/CMSPhysicsAnalysis/DarkMatterSearch/2021/NTuplizer/CMSSW_10_6_17_patch1/src/PPSFramework/working", 
             "lumimask": "", 
             "sample": "/PYTHIA8-SD-TOP-GEN/dmf-PYTHIA8-SD-TOP-MINIAOD-withpps-13TEV-c1a41892bad32b8e981acbdc0a984950/USER", 
             "output": "output.root", 
-            "id": 7, 
+            "id": 8, 
             "name": "PYTHIA8-SD-TOP-13TEV", 
             "parameters": [
                 "ppstagging=False", 
