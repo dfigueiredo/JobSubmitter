@@ -1,0 +1,46 @@
+{
+    "datasets": [
+        {
+            "eospath": "/store/group/phys_exotica/PPS-Exo/Grid", 
+            "enable": 0, 
+            "unitsperjob": 10, 
+            "localpath": "/afs/cern.ch/user/d/dmf/private/work/private/CMSPhysicsAnalysis/DarkMatterSearch/2021/NTuplizer/CMSSW_10_6_17_patch1/src/PPSFramework/working", 
+            "lumimask": "", 
+            "sample": "/PYTHIA8-SD-TOP-GEN/dmf-PYTHIA8-SD-TOP-MINIAOD-withpps-13TEV-c1a41892bad32b8e981acbdc0a984950/USER", 
+            "output": "output.root", 
+            "id": 1, 
+            "name": "PYTHIA8-SD-EraB-TOP-13TEV", 
+            "parameters": [
+                "ppstagging=False", 
+                "physics=muon", 
+                "mode=mc", 
+                "trigger=False"
+            ], 
+            "mode": "mc_private_analysis", 
+            "site": "T2_CH_CERN", 
+            "input": "", 
+            "config": "/afs/cern.ch/user/d/dmf/private/work/private/CMSPhysicsAnalysis/DarkMatterSearch/2021/NTuplizer/CMSSW_10_6_17_patch1/src/PPSFramework/Skimmer/test/RunMissingMassSearches.py"
+        },
+        {   
+            "eospath": "/store/group/phys_exotica/PPS-Exo/Grid",
+            "enable": 1, 
+            "unitsperjob": 10, 
+            "localpath": "/afs/cern.ch/user/d/dmf/private/work/private/CMSPhysicsAnalysis/DarkMatterSearch/2021/NTuplizer/CMSSW_10_6_17_patch1/src/PPSFramework/working",
+            "lumimask": "", 
+            "sample": "/PYTHIA8-SD-TOP-GEN/dmf-PYTHIA8-SD-TOP-MINIAOD-eraC-withpps-13TEV-3ca934675172537d49349bf09c9c6b49/USER",
+            "output": "output.root",
+            "id": 1,
+            "name": "PYTHIA8-SD-EraC-TOP-13TEV",
+            "parameters": [
+                "ppstagging=False",
+                "physics=muon",
+                "mode=mc",
+                "trigger=False"
+            ],
+            "mode": "mc_private_analysis",
+            "site": "T2_CH_CERN",
+            "input": "",
+            "config": "/afs/cern.ch/user/d/dmf/private/work/private/CMSPhysicsAnalysis/DarkMatterSearch/2021/NTuplizer/CMSSW_10_6_17_patch1/src/PPSFramework/Skimmer/test/RunMissingMassSearches.py"
+        }
+    ]
+}
