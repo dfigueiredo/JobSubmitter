@@ -22,7 +22,8 @@ There are python scripts which generate template configuration files (*.json).
 
 ## Options
 
-```pythonOptions:
+```python
+Options:
   -h, --help            show this help message and exit
   -f FILE, --filename=FILE
                         JSON mapping file
@@ -31,7 +32,6 @@ There are python scripts which generate template configuration files (*.json).
                         directly. [parsing: --p "submit --file samples.json"]
   -v, --verbose         make lots of noise [default]
 ```
-
 Therefore, when running the script SubmitterTool.py:
 
 ```python
@@ -46,12 +46,12 @@ EOF  exit  help  mode  submit
 
 By default, the tool is set to submit with crab.
 
-````python
+```python
 python SubmitterTool.py --f configuration_condor.json
 jobs_submission> mode condor
 ```
 
-````python
+```python
 python SubmitterTool.py --f configuration_crab.json
 jobs_submission> mode crab
 ```
