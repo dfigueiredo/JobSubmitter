@@ -19,7 +19,15 @@ source /cvmfs/cms.cern.ch/common/crab-setup.sh
 python SubmitterTool.py --f configuration_file.json
 ```
 
-There are python scripts which generate template configuration files (*.json).
+There are python scripts which generate template configuration files (*.json):
+
+```bash
+python createTemplateCondorJson.py
+```
+
+```bash
+python createTemplateCrabJson.py 
+```
 
 ## Options
 
@@ -63,10 +71,6 @@ All the configurations are set in a JSON file for condor or crab submission. Mul
 
 ### Condor
 
-```bash
-python createTemplateCondorJson.py
-```
-
 ```python
 {
     "datasets": [
@@ -96,18 +100,14 @@ The options are:
 | executable      | (string) User code |  |
 | enable      | (int) 0 or 1 |  |
 | parameters      | (vector string) executable options |  |
-| inputfiles   | (vector string) auxiliary input files | In case extra files |
+| inputfiles   | (vector string) auxiliary input files | In case of extra files |
 | output   | (string) output folder | Condor output. Automatic created. |
 | inputfolder   | (string) multiple root files | Condor will create a job per file (*.root) |
-| id   | (int) identifier. | Start from 0. Must be different |
+| id   | (int) identifier | Start from 0. Must be different |
 
 ### Crab
 
 A python script is used to produce a template for the crab submission.
-
-```bash
-python createTemplateCrabJson.py 
-```
 
 ```python
 {
@@ -136,11 +136,22 @@ The options are:
 
 | Options       | Explanation | Comments |
 | ------------- |:-------------:|-------------:|
-| executable      | (string) User code |  |
+| eospath      | (string) eos or store user area |  |
 | enable      | (int) 0 or 1 |  |
-| parameters      | (vector string) executable options |  |
-| inputfiles   | (vector string) auxiliary input files | In case extra files |
-| output   | (string) output folder | Condor output. Automatic created. |
-| inputfolder   | (string) multiple root files | Condor will create a job per file (*.root) |
+| unitsperjob      | (int) number of files per job (MC) or LS units (data) |  |
+| localpath   | (string) directory where the crab folder will be saved |
+| lumimask   | (string) when running with data | |
+| sample   | (string) dataset | Empty for GEN creation (MC) |
+| output   | (string) crab root output file | Same name as in the CMSSW config |
 | id   | (int) identifier. | Start from 0. Must be different |
+| name   | (string) name of the task and name of dataset (when created) | |
+| parameters   | (vector string) CMSSW input parameters |  |
+| mode   | (string) data_analysis  | For data analysis |
+|    | (string) mc_analysis  | For MC analysis |
+|    | (string) mc_private_analysis | For MC analysis (DBS phys03) |
+|    | (string) mc_private_hadron_production | For MC GEN production (DBS phys03) |
+|    | (string) mc_private_hadron_lhe_production | For MC LHE production (DBS phys03) |
+| site   | (string) Storage Site | |
+| input   | (string) In case of extra input file | |
+| config   | (string) CMSSW config file | |
 
