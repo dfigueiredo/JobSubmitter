@@ -4,7 +4,7 @@ This package is used to submit multple crab or condor tasks on lxplus. Moreover,
 
 ## Installation
 
-Download the package from git. It is also important to set the crab envinroment as well as CMSSW. 
+Download the package from git. It is also important to set the crab environment as well as CMSSW (cmsenv) where your plugins are set. 
 
 ```bash
 git clone https://github.com/dfigueiredo/JobSubmitter.git
@@ -18,6 +18,7 @@ For a given configuration_file.json (specific for condor or crab submission):
 source /cvmfs/cms.cern.ch/common/crab-setup.sh
 python SubmitterTool.py --f configuration_file.json
 ```
+
 There are python scripts which generate template configuration files (*.json).
 
 ## Options
@@ -90,12 +91,15 @@ python createTemplateCondorJson.py
 
 The options are:
 
-| Monte-Carlo       | Script | Event Content |
+| Options       | Explanation | Comments |
 | ------------- |:-------------:|-------------:|
-| pythia      | source step1-pythia.sh | GEN |
-| ExHume      | source step1-exhume.sh | GEN |
-| pomwig      | source step1-pomwig.sh | GEN |
-| LHE Toy MC   | source step1-LHEGEN.sh | LHE, GEN |
+| executable      | (string) User code |  |
+| enable      | (int) 0 or 1 |  |
+| parameters      | (vector string) executable options |  |
+| inputfiles   | (vector string) auxiliary input files | In case extra files |
+| output   | (string) output folder | Condor output. Automatic created. |
+| inputfolder   | (string) multiple root files | Condor will create a job per file (*.root) |
+| id   | (int) identifier. | Start from 0. Must be different |
 
 ### Crab
 
@@ -130,9 +134,13 @@ python createTemplateCrabJson.py
 
 The options are:
 
-| Monte-Carlo       | Script | Event Content |
+| Options       | Explanation | Comments |
 | ------------- |:-------------:|-------------:|
-| pythia      | source step1-pythia.sh | GEN |
-| ExHume      | source step1-exhume.sh | GEN |
-| pomwig      | source step1-pomwig.sh | GEN |
-| LHE Toy MC   | source step1-LHEGEN.sh | LHE, GEN |
+| executable      | (string) User code |  |
+| enable      | (int) 0 or 1 |  |
+| parameters      | (vector string) executable options |  |
+| inputfiles   | (vector string) auxiliary input files | In case extra files |
+| output   | (string) output folder | Condor output. Automatic created. |
+| inputfolder   | (string) multiple root files | Condor will create a job per file (*.root) |
+| id   | (int) identifier. | Start from 0. Must be different |
+
