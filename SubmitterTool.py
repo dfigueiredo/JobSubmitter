@@ -99,7 +99,7 @@ class MyPrompt(Cmd):
      else:
       print("[submitter] Nothing done. This option does not exist! Please, try again using mode crab||condor. By default, crab mode is selected.\n\n")
 
-    def help_activate(self): 
+    def help_mode(self): 
       print(color.HEADER + "\n\nThis command is used to select the mode crab or condor for submission.\n\n")
       print("\n [submitter] Mode crab|condor <enter>\n" + color.ENDC)
 
