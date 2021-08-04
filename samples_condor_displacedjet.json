@@ -1,0 +1,212 @@
+{
+    "datasets": [
+        {
+            "executable": "/afs/cern.ch/user/d/dmf/private/work/private/CMSPhysicsAnalysis/DarkMatterSearch/2021/NTuplizer/CMSSW_10_6_17_patch1/src/PPSFramework/Analyzer/MissingMassNtupleAnalyzer", 
+            "enable": 1, 
+            "parameters": [
+                "--f $(filename)", 
+                "--year 2018", 
+                "--era A", 
+                "--mode data", 
+                "--physics displacedjet", 
+                "--jobid $(ProcId)"
+            ], 
+            "inputfiles": "", 
+            "output": "displacedjet-data-era-A-year-2018-0000/", 
+            "inputfolder": "/eos/cms/store/group/phys_exotica/PPS-Exo/Grid/displacedjet-data-2018A-13TEV/crab_dmf_2021-07-27_UTC14-32-57/DisplacedJet/crab_crab_dmf_2021-07-27_UTC14-32-57/210727_123310/0000/", 
+            "id": 0
+        }, 
+        {
+            "executable": "/afs/cern.ch/user/d/dmf/private/work/private/CMSPhysicsAnalysis/DarkMatterSearch/2021/NTuplizer/CMSSW_10_6_17_patch1/src/PPSFramework/Analyzer/MissingMassNtupleAnalyzer", 
+            "enable": 1, 
+            "parameters": [
+                "--f $(filename)", 
+                "--year 2018", 
+                "--era A", 
+                "--mode data", 
+                "--physics displacedjet", 
+                "--jobid $(ProcId)"
+            ], 
+            "inputfiles": "", 
+            "output": "displacedjet-data-era-A-year-2018-0001/", 
+            "inputfolder": "/eos/cms/store/group/phys_exotica/PPS-Exo/Grid/displacedjet-data-2018A-13TEV/crab_dmf_2021-07-27_UTC14-32-57/DisplacedJet/crab_crab_dmf_2021-07-27_UTC14-32-57/210727_123310/0001/", 
+            "id": 1
+        }, 
+        {
+            "executable": "/afs/cern.ch/user/d/dmf/private/work/private/CMSPhysicsAnalysis/DarkMatterSearch/2021/NTuplizer/CMSSW_10_6_17_patch1/src/PPSFramework/Analyzer/MissingMassNtupleAnalyzer", 
+            "enable": 1, 
+            "parameters": [
+                "--f $(filename)", 
+                "--year 2018", 
+                "--era A", 
+                "--mode data", 
+                "--physics displacedjet", 
+                "--jobid $(ProcId)"
+            ], 
+            "inputfiles": "", 
+            "output": "displacedjet-data-era-A-year-2018-0002/", 
+            "inputfolder": "/eos/cms/store/group/phys_exotica/PPS-Exo/Grid/displacedjet-data-2018A-13TEV/crab_dmf_2021-07-27_UTC14-32-57/DisplacedJet/crab_crab_dmf_2021-07-27_UTC14-32-57/210727_123310/0002/", 
+            "id": 2
+        }, 
+        {
+            "executable": "/afs/cern.ch/user/d/dmf/private/work/private/CMSPhysicsAnalysis/DarkMatterSearch/2021/NTuplizer/CMSSW_10_6_17_patch1/src/PPSFramework/Analyzer/MissingMassNtupleAnalyzer", 
+            "enable": 1, 
+            "parameters": [
+                "--f $(filename)", 
+                "--year 2018", 
+                "--era B", 
+                "--mode data", 
+                "--physics displacedjet", 
+                "--jobid $(ProcId)"
+            ], 
+            "inputfiles": "", 
+            "output": "displacedjet-data-era-B-year-2018-0000/", 
+            "inputfolder": "/eos/cms/store/group/phys_exotica/PPS-Exo/Grid/displacedjet-data-2018B-13TEV/crab_dmf_2021-07-27_UTC14-33-10/DisplacedJet/crab_crab_dmf_2021-07-27_UTC14-33-10/210727_123319/0000/", 
+            "id": 3
+        }, 
+        {
+            "executable": "/afs/cern.ch/user/d/dmf/private/work/private/CMSPhysicsAnalysis/DarkMatterSearch/2021/NTuplizer/CMSSW_10_6_17_patch1/src/PPSFramework/Analyzer/MissingMassNtupleAnalyzer", 
+            "enable": 1, 
+            "parameters": [
+                "--f $(filename)", 
+                "--year 2018", 
+                "--era B", 
+                "--mode data", 
+                "--physics displacedjet", 
+                "--jobid $(ProcId)"
+            ], 
+            "inputfiles": "", 
+            "output": "displacedjet-data-era-B-year-2018-0001/", 
+            "inputfolder": "/eos/cms/store/group/phys_exotica/PPS-Exo/Grid/displacedjet-data-2018B-13TEV/crab_dmf_2021-07-27_UTC14-33-10/DisplacedJet/crab_crab_dmf_2021-07-27_UTC14-33-10/210727_123319/0001/", 
+            "id": 4
+        }, 
+        {
+            "executable": "/afs/cern.ch/user/d/dmf/private/work/private/CMSPhysicsAnalysis/DarkMatterSearch/2021/NTuplizer/CMSSW_10_6_17_patch1/src/PPSFramework/Analyzer/MissingMassNtupleAnalyzer", 
+            "enable": 1, 
+            "parameters": [
+                "--f $(filename)", 
+                "--year 2018", 
+                "--era C", 
+                "--mode data", 
+                "--physics displacedjet", 
+                "--jobid $(ProcId)"
+            ], 
+            "inputfiles": "", 
+            "output": "displacedjet-data-era-C-year-2018-0000/", 
+            "inputfolder": "/eos/cms/store/group/phys_exotica/PPS-Exo/Grid/displacedjet-data-2018C-13TEV/crab_dmf_2021-07-27_UTC14-33-19/DisplacedJet/crab_crab_dmf_2021-07-27_UTC14-33-19/210727_123328/0000/", 
+            "id": 5
+        }, 
+        {
+            "executable": "/afs/cern.ch/user/d/dmf/private/work/private/CMSPhysicsAnalysis/DarkMatterSearch/2021/NTuplizer/CMSSW_10_6_17_patch1/src/PPSFramework/Analyzer/MissingMassNtupleAnalyzer", 
+            "enable": 1, 
+            "parameters": [
+                "--f $(filename)", 
+                "--year 2018", 
+                "--era C", 
+                "--mode data", 
+                "--physics displacedjet", 
+                "--jobid $(ProcId)"
+            ], 
+            "inputfiles": "", 
+            "output": "displacedjet-data-era-C-year-2018-0001/", 
+            "inputfolder": "/eos/cms/store/group/phys_exotica/PPS-Exo/Grid/displacedjet-data-2018C-13TEV/crab_dmf_2021-07-27_UTC14-33-19/DisplacedJet/crab_crab_dmf_2021-07-27_UTC14-33-19/210727_123328/0001/", 
+            "id": 6
+        }, 
+        {
+            "executable": "/afs/cern.ch/user/d/dmf/private/work/private/CMSPhysicsAnalysis/DarkMatterSearch/2021/NTuplizer/CMSSW_10_6_17_patch1/src/PPSFramework/Analyzer/MissingMassNtupleAnalyzer", 
+            "enable": 1, 
+            "parameters": [
+                "--f $(filename)", 
+                "--year 2018", 
+                "--era D", 
+                "--mode data", 
+                "--physics displacedjet", 
+                "--jobid $(ProcId)"
+            ], 
+            "inputfiles": "", 
+            "output": "displacedjet-data-era-D-year-2018-0000/", 
+            "inputfolder": "/eos/cms/store/group/phys_exotica/PPS-Exo/Grid/displacedjet-data-2018D-13TEV/crab_dmf_2021-07-27_UTC14-33-28/DisplacedJet/crab_crab_dmf_2021-07-27_UTC14-33-28/210727_123336/0000/", 
+            "id": 7
+        }, 
+        {
+            "executable": "/afs/cern.ch/user/d/dmf/private/work/private/CMSPhysicsAnalysis/DarkMatterSearch/2021/NTuplizer/CMSSW_10_6_17_patch1/src/PPSFramework/Analyzer/MissingMassNtupleAnalyzer", 
+            "enable": 1, 
+            "parameters": [
+                "--f $(filename)", 
+                "--year 2018", 
+                "--era D", 
+                "--mode data", 
+                "--physics displacedjet", 
+                "--jobid $(ProcId)"
+            ], 
+            "inputfiles": "", 
+            "output": "displacedjet-data-era-D-year-2018-0001/", 
+            "inputfolder": "/eos/cms/store/group/phys_exotica/PPS-Exo/Grid/displacedjet-data-2018D-13TEV/crab_dmf_2021-07-27_UTC14-33-28/DisplacedJet/crab_crab_dmf_2021-07-27_UTC14-33-28/210727_123336/0001/", 
+            "id": 8
+        }, 
+        {
+            "executable": "/afs/cern.ch/user/d/dmf/private/work/private/CMSPhysicsAnalysis/DarkMatterSearch/2021/NTuplizer/CMSSW_10_6_17_patch1/src/PPSFramework/Analyzer/MissingMassNtupleAnalyzer", 
+            "enable": 1, 
+            "parameters": [
+                "--f $(filename)", 
+                "--year 2018", 
+                "--era D", 
+                "--mode data", 
+                "--physics displacedjet", 
+                "--jobid $(ProcId)"
+            ], 
+            "inputfiles": "", 
+            "output": "displacedjet-data-era-D-year-2018-0002/", 
+            "inputfolder": "/eos/cms/store/group/phys_exotica/PPS-Exo/Grid/displacedjet-data-2018D-13TEV/crab_dmf_2021-07-27_UTC14-33-28/DisplacedJet/crab_crab_dmf_2021-07-27_UTC14-33-28/210727_123336/0002/", 
+            "id": 9
+        }, 
+        {
+            "executable": "/afs/cern.ch/user/d/dmf/private/work/private/CMSPhysicsAnalysis/DarkMatterSearch/2021/NTuplizer/CMSSW_10_6_17_patch1/src/PPSFramework/Analyzer/MissingMassNtupleAnalyzer", 
+            "enable": 1, 
+            "parameters": [
+                "--f $(filename)", 
+                "--year 2018", 
+                "--era D", 
+                "--mode data", 
+                "--physics displacedjet", 
+                "--jobid $(ProcId)"
+            ], 
+            "inputfiles": "", 
+            "output": "displacedjet-data-era-D-year-2018-0003/", 
+            "inputfolder": "/eos/cms/store/group/phys_exotica/PPS-Exo/Grid/displacedjet-data-2018D-13TEV/crab_dmf_2021-07-27_UTC14-33-28/DisplacedJet/crab_crab_dmf_2021-07-27_UTC14-33-28/210727_123336/0003/", 
+            "id": 10
+        }, 
+        {
+            "executable": "/afs/cern.ch/user/d/dmf/private/work/private/CMSPhysicsAnalysis/DarkMatterSearch/2021/NTuplizer/CMSSW_10_6_17_patch1/src/PPSFramework/Analyzer/MissingMassNtupleAnalyzer", 
+            "enable": 1, 
+            "parameters": [
+                "--f $(filename)", 
+                "--year 2018", 
+                "--era D", 
+                "--mode data", 
+                "--physics displacedjet", 
+                "--jobid $(ProcId)"
+            ], 
+            "inputfiles": "", 
+            "output": "displacedjet-data-era-D-year-2018-0004/", 
+            "inputfolder": "/eos/cms/store/group/phys_exotica/PPS-Exo/Grid/displacedjet-data-2018D-13TEV/crab_dmf_2021-07-27_UTC14-33-28/DisplacedJet/crab_crab_dmf_2021-07-27_UTC14-33-28/210727_123336/0004/", 
+            "id": 11
+        }, 
+        {
+            "executable": "/afs/cern.ch/user/d/dmf/private/work/private/CMSPhysicsAnalysis/DarkMatterSearch/2021/NTuplizer/CMSSW_10_6_17_patch1/src/PPSFramework/Analyzer/MissingMassNtupleAnalyzer", 
+            "enable": 1, 
+            "parameters": [
+                "--f $(filename)", 
+                "--year 2018", 
+                "--era D", 
+                "--mode data", 
+                "--physics displacedjet", 
+                "--jobid $(ProcId)"
+            ], 
+            "inputfiles": "", 
+            "output": "displacedjet-data-era-D-year-2018-0005/", 
+            "inputfolder": "/eos/cms/store/group/phys_exotica/PPS-Exo/Grid/displacedjet-data-2018D-13TEV/crab_dmf_2021-07-27_UTC14-33-28/DisplacedJet/crab_crab_dmf_2021-07-27_UTC14-33-28/210727_123336/0005/", 
+            "id": 12
+        } 
+    ]
+}

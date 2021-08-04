@@ -1,0 +1,22 @@
+{
+    "datasets": [
+        {
+            "executable": "/afs/cern.ch/user/d/dmf/private/work/private/CMSPhysicsAnalysis/DarkMatterSearch/2021/NTuplizer/CMSSW_10_6_17_patch1/src/PPSFramework/Analyzer/MissingMassNtupleAnalyzer", 
+            "enable": 1, 
+            "parameters": [
+                "--f $(filename)", 
+                "--year 2018", 
+                "--era A", 
+                "--mode mc", 
+                "--physics bjet", 
+                "--random", 
+                "--notrigger", 
+                "--jobid $(ProcId)"
+            ], 
+            "inputfiles": "/afs/cern.ch/user/d/dmf/private/work/private/CMSPhysicsAnalysis/DarkMatterSearch/2021/NTuplizer/CMSSW_10_6_17_patch1/src/PPSFramework/Analyzer/RandomProtons_bjet.root", 
+            "output": "pythia8-mc-era-A-year-2018/",
+            "inputfolder": "/eos/cms/store/group/phys_exotica/PPS-Exo/Grid/pythia8-bjet-mc-2018A-13TEV/crab_dmf_2021-08-02_UTC11-02-22/PYTHIA8-SD-TOP-GEN/crab_crab_dmf_2021-08-02_UTC11-02-22/210802_090637/0000/", 
+            "id": 0
+        }
+    ]
+}

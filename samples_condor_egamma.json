@@ -1,0 +1,289 @@
+{
+    "datasets": [
+        {
+            "executable": "/afs/cern.ch/user/d/dmf/private/work/private/CMSPhysicsAnalysis/DarkMatterSearch/2021/NTuplizer/CMSSW_10_6_17_patch1/src/PPSFramework/Analyzer/MissingMassNtupleAnalyzer", 
+            "enable": 1, 
+            "parameters": [
+                "--f $(filename)", 
+                "--era A", 
+                "--mode data", 
+                "--physics electron", 
+                "--jobid $(ProcId)" 
+            ], 
+            "inputfiles": [""],
+            "inputfolder": "/eos/cms/store/group/phys_exotica/PPS-Exo/Grid/egamma-data-2018A-13TEV/crab_dmf_2021-07-20_UTC16-35-08/EGamma/crab_crab_dmf_2021-07-20_UTC16-35-08/210720_143545/0000/",
+            "output": "egamma-data-2018A-0000/",
+            "id": 0
+        },
+        {
+            "executable": "/afs/cern.ch/user/d/dmf/private/work/private/CMSPhysicsAnalysis/DarkMatterSearch/2021/NTuplizer/CMSSW_10_6_17_patch1/src/PPSFramework/Analyzer/MissingMassNtupleAnalyzer",
+            "enable": 1,
+            "parameters": [
+                "--f $(filename)",
+                "--era A",
+                "--mode data",
+                "--physics electron",
+                "--jobid $(ProcId)"
+            ],
+            "inputfiles": [""],
+            "inputfolder": "/eos/cms/store/group/phys_exotica/PPS-Exo/Grid/egamma-data-2018A-13TEV/crab_dmf_2021-07-20_UTC16-35-08/EGamma/crab_crab_dmf_2021-07-20_UTC16-35-08/210720_143545/0001/",
+            "output": "egamma-data-2018A-0001/",
+            "id": 1
+        },
+        {
+            "executable": "/afs/cern.ch/user/d/dmf/private/work/private/CMSPhysicsAnalysis/DarkMatterSearch/2021/NTuplizer/CMSSW_10_6_17_patch1/src/PPSFramework/Analyzer/MissingMassNtupleAnalyzer",
+            "enable": 1,
+            "parameters": [
+                "--f $(filename)",
+                "--era A",
+                "--mode data",
+                "--physics electron",
+                "--jobid $(ProcId)"
+            ],
+            "inputfiles": [""],
+            "inputfolder": "/eos/cms/store/group/phys_exotica/PPS-Exo/Grid/egamma-data-2018A-13TEV/crab_dmf_2021-07-20_UTC16-35-08/EGamma/crab_crab_dmf_2021-07-20_UTC16-35-08/210720_143545/0002/",
+            "output": "egamma-data-2018A-0002/",
+            "id": 2
+        },
+        {
+            "executable": "/afs/cern.ch/user/d/dmf/private/work/private/CMSPhysicsAnalysis/DarkMatterSearch/2021/NTuplizer/CMSSW_10_6_17_patch1/src/PPSFramework/Analyzer/MissingMassNtupleAnalyzer",
+            "enable": 1,
+            "parameters": [
+                "--f $(filename)",
+                "--era A",
+                "--mode data",
+                "--physics electron",
+                "--jobid $(ProcId)"
+            ],
+            "inputfiles": [""],
+            "inputfolder": "/eos/cms/store/group/phys_exotica/PPS-Exo/Grid/egamma-data-2018A-13TEV/crab_dmf_2021-07-20_UTC16-35-08/EGamma/crab_crab_dmf_2021-07-20_UTC16-35-08/210720_143545/0003/",
+            "output": "egamma-data-2018A-0003/",
+            "id": 3
+        },
+        {
+            "executable": "/afs/cern.ch/user/d/dmf/private/work/private/CMSPhysicsAnalysis/DarkMatterSearch/2021/NTuplizer/CMSSW_10_6_17_patch1/src/PPSFramework/Analyzer/MissingMassNtupleAnalyzer",
+            "enable": 1,
+            "parameters": [
+                "--f $(filename)",
+                "--era A",
+                "--mode data",
+                "--physics electron",
+                "--jobid $(ProcId)"
+            ],
+            "inputfiles": [""],
+            "inputfolder": "/eos/cms/store/group/phys_exotica/PPS-Exo/Grid/egamma-data-2018A-13TEV/crab_dmf_2021-07-20_UTC16-35-08/EGamma/crab_crab_dmf_2021-07-20_UTC16-35-08/210720_143545/0004/",
+            "output": "egamma-data-2018A-0004/",
+            "id": 4
+        },
+        {
+            "executable": "/afs/cern.ch/user/d/dmf/private/work/private/CMSPhysicsAnalysis/DarkMatterSearch/2021/NTuplizer/CMSSW_10_6_17_patch1/src/PPSFramework/Analyzer/MissingMassNtupleAnalyzer",
+            "enable": 1,
+            "parameters": [
+                "--f $(filename)",
+                "--era B",
+                "--mode data",
+                "--physics electron",
+                "--jobid $(ProcId)"
+            ],
+            "inputfiles": [""],
+            "inputfolder":"/eos/cms/store/group/phys_exotica/PPS-Exo/Grid/egamma-data-2018B-13TEV/crab_dmf_2021-07-21_UTC10-38-04/EGamma/crab_crab_dmf_2021-07-21_UTC10-38-04/210721_083821/0000/",
+            "output": "egamma-data-2018B-0000/",
+            "id": 5
+        },
+        {
+            "executable": "/afs/cern.ch/user/d/dmf/private/work/private/CMSPhysicsAnalysis/DarkMatterSearch/2021/NTuplizer/CMSSW_10_6_17_patch1/src/PPSFramework/Analyzer/MissingMassNtupleAnalyzer",
+            "enable": 1,
+            "parameters": [
+                "--f $(filename)",
+                "--era B",
+                "--mode data",
+                "--physics electron",
+                "--jobid $(ProcId)"
+            ],
+            "inputfiles": [""],
+            "inputfolder":"/eos/cms/store/group/phys_exotica/PPS-Exo/Grid/egamma-data-2018B-13TEV/crab_dmf_2021-07-21_UTC10-38-04/EGamma/crab_crab_dmf_2021-07-21_UTC10-38-04/210721_083821/0001/",
+            "output": "egamma-data-2018B-0001/",
+            "id": 6
+        },
+        {
+            "executable": "/afs/cern.ch/user/d/dmf/private/work/private/CMSPhysicsAnalysis/DarkMatterSearch/2021/NTuplizer/CMSSW_10_6_17_patch1/src/PPSFramework/Analyzer/MissingMassNtupleAnalyzer",
+            "enable": 1,
+            "parameters": [
+                "--f $(filename)",
+                "--era B",
+                "--mode data",
+                "--physics electron",
+                "--jobid $(ProcId)"
+            ],
+            "inputfiles": [""],
+            "inputfolder":"/eos/cms/store/group/phys_exotica/PPS-Exo/Grid/egamma-data-2018B-13TEV/crab_dmf_2021-07-21_UTC10-38-04/EGamma/crab_crab_dmf_2021-07-21_UTC10-38-04/210721_083821/0002/",
+            "output": "egamma-data-2018B-0002/",
+            "id": 7
+        },
+        {
+            "executable": "/afs/cern.ch/user/d/dmf/private/work/private/CMSPhysicsAnalysis/DarkMatterSearch/2021/NTuplizer/CMSSW_10_6_17_patch1/src/PPSFramework/Analyzer/MissingMassNtupleAnalyzer",
+            "enable": 1,
+            "parameters": [
+                "--f $(filename)",
+                "--era C",
+                "--mode data",
+                "--physics electron",
+                "--jobid $(ProcId)"
+            ],
+            "inputfiles": [""],
+            "inputfolder":"/eos/cms/store/group/phys_exotica/PPS-Exo/Grid/egamma-data-2018C-13TEV/crab_dmf_2021-07-21_UTC16-59-03/EGamma/crab_crab_dmf_2021-07-21_UTC16-59-03/210721_145919/0000/",
+            "output": "egamma-data-2018C-0000/",
+            "id": 8
+        },
+        {
+            "executable": "/afs/cern.ch/user/d/dmf/private/work/private/CMSPhysicsAnalysis/DarkMatterSearch/2021/NTuplizer/CMSSW_10_6_17_patch1/src/PPSFramework/Analyzer/MissingMassNtupleAnalyzer",
+            "enable": 1,
+            "parameters": [
+                "--f $(filename)",
+                "--era C",
+                "--mode data",
+                "--physics electron",
+                "--jobid $(ProcId)"
+            ],
+            "inputfiles": [""],
+            "inputfolder":"/eos/cms/store/group/phys_exotica/PPS-Exo/Grid/egamma-data-2018C-13TEV/crab_dmf_2021-07-21_UTC16-59-03/EGamma/crab_crab_dmf_2021-07-21_UTC16-59-03/210721_145919/0001/",
+            "output": "egamma-data-2018C-0001/",
+            "id": 9
+        },
+        {
+            "executable": "/afs/cern.ch/user/d/dmf/private/work/private/CMSPhysicsAnalysis/DarkMatterSearch/2021/NTuplizer/CMSSW_10_6_17_patch1/src/PPSFramework/Analyzer/MissingMassNtupleAnalyzer",
+            "enable": 1,
+            "parameters": [
+                "--f $(filename)",
+                "--era C",
+                "--mode data",
+                "--physics electron",
+                "--jobid $(ProcId)"
+            ],
+            "inputfiles": [""],
+            "inputfolder":"/eos/cms/store/group/phys_exotica/PPS-Exo/Grid/egamma-data-2018C-13TEV/crab_dmf_2021-07-21_UTC16-59-03/EGamma/crab_crab_dmf_2021-07-21_UTC16-59-03/210721_145919/0002/",
+            "output": "egamma-data-2018C-0002/",
+            "id": 10
+        },
+        {
+            "executable": "/afs/cern.ch/user/d/dmf/private/work/private/CMSPhysicsAnalysis/DarkMatterSearch/2021/NTuplizer/CMSSW_10_6_17_patch1/src/PPSFramework/Analyzer/MissingMassNtupleAnalyzer",
+            "enable": 1,
+            "parameters": [
+                "--f $(filename)",
+                "--era D",
+                "--mode data",
+                "--physics electron",
+                "--jobid $(ProcId)"
+            ],
+            "inputfiles": [""],
+            "inputfolder":"/eos/cms/store/group/phys_exotica/PPS-Exo/Grid/egamma-data-2018D-13TEV/crab_dmf_2021-07-22_UTC12-34-10/EGamma/crab_crab_dmf_2021-07-22_UTC12-34-10/210722_103426/0000/",
+            "output": "egamma-data-2018D-0000/",
+            "id": 11
+        },
+        {
+            "executable": "/afs/cern.ch/user/d/dmf/private/work/private/CMSPhysicsAnalysis/DarkMatterSearch/2021/NTuplizer/CMSSW_10_6_17_patch1/src/PPSFramework/Analyzer/MissingMassNtupleAnalyzer",
+            "enable": 1,
+            "parameters": [
+                "--f $(filename)",
+                "--era D",
+                "--mode data",
+                "--physics electron",
+                "--jobid $(ProcId)"
+            ],
+            "inputfiles": [""],
+            "inputfolder":"/eos/cms/store/group/phys_exotica/PPS-Exo/Grid/egamma-data-2018D-13TEV/crab_dmf_2021-07-22_UTC12-34-10/EGamma/crab_crab_dmf_2021-07-22_UTC12-34-10/210722_103426/0001/",
+            "output": "egamma-data-2018D-0001/",
+            "id": 12
+        },
+        {
+            "executable": "/afs/cern.ch/user/d/dmf/private/work/private/CMSPhysicsAnalysis/DarkMatterSearch/2021/NTuplizer/CMSSW_10_6_17_patch1/src/PPSFramework/Analyzer/MissingMassNtupleAnalyzer",
+            "enable": 1,
+            "parameters": [
+                "--f $(filename)",
+                "--era D",
+                "--mode data",
+                "--physics electron",
+                "--jobid $(ProcId)"
+            ],
+            "inputfiles": [""],
+            "inputfolder":"/eos/cms/store/group/phys_exotica/PPS-Exo/Grid/egamma-data-2018D-13TEV/crab_dmf_2021-07-22_UTC12-34-10/EGamma/crab_crab_dmf_2021-07-22_UTC12-34-10/210722_103426/0002/",
+            "output": "egamma-data-2018D-0002/",
+            "id": 13
+        },
+        {
+            "executable": "/afs/cern.ch/user/d/dmf/private/work/private/CMSPhysicsAnalysis/DarkMatterSearch/2021/NTuplizer/CMSSW_10_6_17_patch1/src/PPSFramework/Analyzer/MissingMassNtupleAnalyzer",
+            "enable": 1,
+            "parameters": [
+                "--f $(filename)",
+                "--era D",
+                "--mode data",
+                "--physics electron",
+                "--jobid $(ProcId)"
+            ],
+            "inputfiles": [""],
+            "inputfolder":"/eos/cms/store/group/phys_exotica/PPS-Exo/Grid/egamma-data-2018D-13TEV/crab_dmf_2021-07-22_UTC12-34-10/EGamma/crab_crab_dmf_2021-07-22_UTC12-34-10/210722_103426/0003/",
+            "output": "egamma-data-2018D-0003/",
+            "id": 14
+        },
+        {
+            "executable": "/afs/cern.ch/user/d/dmf/private/work/private/CMSPhysicsAnalysis/DarkMatterSearch/2021/NTuplizer/CMSSW_10_6_17_patch1/src/PPSFramework/Analyzer/MissingMassNtupleAnalyzer",
+            "enable": 1,
+            "parameters": [
+                "--f $(filename)",
+                "--era D",
+                "--mode data",
+                "--physics electron",
+                "--jobid $(ProcId)"
+            ],
+            "inputfiles": [""],
+            "inputfolder":"/eos/cms/store/group/phys_exotica/PPS-Exo/Grid/egamma-data-2018D-13TEV/crab_dmf_2021-07-22_UTC12-34-10/EGamma/crab_crab_dmf_2021-07-22_UTC12-34-10/210722_103426/0004/",
+            "output": "egamma-data-2018D-0004/",
+            "id": 15
+        },
+        {
+            "executable": "/afs/cern.ch/user/d/dmf/private/work/private/CMSPhysicsAnalysis/DarkMatterSearch/2021/NTuplizer/CMSSW_10_6_17_patch1/src/PPSFramework/Analyzer/MissingMassNtupleAnalyzer",
+            "enable": 1,
+            "parameters": [
+                "--f $(filename)",
+                "--era D",
+                "--mode data",
+                "--physics electron",
+                "--jobid $(ProcId)"
+            ],
+            "inputfiles": [""],
+            "inputfolder":"/eos/cms/store/group/phys_exotica/PPS-Exo/Grid/egamma-data-2018D-13TEV/crab_dmf_2021-07-22_UTC12-34-10/EGamma/crab_crab_dmf_2021-07-22_UTC12-34-10/210722_103426/0005/",
+            "output": "egamma-data-2018D-0005/",
+            "id": 16
+        },
+        {
+            "executable": "/afs/cern.ch/user/d/dmf/private/work/private/CMSPhysicsAnalysis/DarkMatterSearch/2021/NTuplizer/CMSSW_10_6_17_patch1/src/PPSFramework/Analyzer/MissingMassNtupleAnalyzer",
+            "enable": 1,
+            "parameters": [
+                "--f $(filename)",
+                "--era D",
+                "--mode data",
+                "--physics electron",
+                "--jobid $(ProcId)"
+            ],
+            "inputfiles": [""],
+            "inputfolder":"/eos/cms/store/group/phys_exotica/PPS-Exo/Grid/egamma-data-2018D-13TEV/crab_dmf_2021-07-22_UTC12-34-10/EGamma/crab_crab_dmf_2021-07-22_UTC12-34-10/210722_103426/0006/",
+            "output": "egamma-data-2018D-0006/",
+            "id": 17
+        },
+        {
+            "executable": "/afs/cern.ch/user/d/dmf/private/work/private/CMSPhysicsAnalysis/DarkMatterSearch/2021/NTuplizer/CMSSW_10_6_17_patch1/src/PPSFramework/Analyzer/MissingMassNtupleAnalyzer",
+            "enable": 1,
+            "parameters": [
+                "--f $(filename)",
+                "--era D",
+                "--mode data",
+                "--physics electron",
+                "--jobid $(ProcId)"
+            ],
+            "inputfiles": [""],
+            "inputfolder":"/eos/cms/store/group/phys_exotica/PPS-Exo/Grid/egamma-data-2018D-13TEV/crab_dmf_2021-07-22_UTC12-34-10/EGamma/crab_crab_dmf_2021-07-22_UTC12-34-10/210722_103426/0007/",
+            "output": "egamma-data-2018D-0007/",
+            "id": 18
+        }
+    ]
+}

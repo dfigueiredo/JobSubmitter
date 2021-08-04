@@ -1,0 +1,92 @@
+{
+    "datasets": [
+        {
+            "eospath": "/store/group/phys_exotica/PPS-Exo/Grid", 
+            "enable": 0, 
+            "unitsperjob": 10, 
+            "localpath": "/afs/cern.ch/user/d/dmf/private/work/private/CMSPhysicsAnalysis/DarkMatterSearch/2021/NTuplizer/CMSSW_10_6_17_patch1/src/PPSFramework/working", 
+            "lumimask": "/afs/cern.ch/user/d/dmf/private/work/private/CMSPhysicsAnalysis/DarkMatterSearch/2021/NTuplizer/CMSSW_10_6_17_patch1/src/PPSFramework/working/json_dpg/combined_RPIN_CMS_2018.json", 
+            "sample": "/EGamma/Run2018A-UL2018_MiniAODv2-v1/MINIAOD",
+            "output": "output.root", 
+            "id": 0, 
+            "name": "egamma-data-2018A-13TEV", 
+            "parameters": [
+                "year=2018", 
+                "ppstagging=True", 
+                "physics=electron", 
+                "mode=data", 
+                "trigger=True"
+            ], 
+            "mode": "data_analysis", 
+            "site": "T2_CH_CERN", 
+            "input": "", 
+            "config": "/afs/cern.ch/user/d/dmf/private/work/private/CMSPhysicsAnalysis/DarkMatterSearch/2021/NTuplizer/CMSSW_10_6_17_patch1/src/PPSFramework/working/RunMissingMassSearches.py"
+        },
+        {
+            "eospath": "/store/group/phys_exotica/PPS-Exo/Grid",
+            "enable": 0,
+            "unitsperjob": 10,
+            "localpath": "/afs/cern.ch/user/d/dmf/private/work/private/CMSPhysicsAnalysis/DarkMatterSearch/2021/NTuplizer/CMSSW_10_6_17_patch1/src/PPSFramework/working",
+            "lumimask": "/afs/cern.ch/user/d/dmf/private/work/private/CMSPhysicsAnalysis/DarkMatterSearch/2021/NTuplizer/CMSSW_10_6_17_patch1/src/PPSFramework/working/json_dpg/combined_RPIN_CMS_2018.json",
+            "sample": "/EGamma/Run2018B-UL2018_MiniAODv2-v1/MINIAOD",
+            "output": "output.root",
+            "id": 1,
+            "name": "egamma-data-2018B-13TEV",
+            "parameters": [
+                "year=2018",
+                "ppstagging=True",
+                "physics=electron",
+                "mode=data",
+                "trigger=True"
+            ],
+            "mode": "data_analysis",
+            "site": "T2_CH_CERN",
+            "input": "",
+            "config": "/afs/cern.ch/user/d/dmf/private/work/private/CMSPhysicsAnalysis/DarkMatterSearch/2021/NTuplizer/CMSSW_10_6_17_patch1/src/PPSFramework/working/RunMissingMassSearches.py"
+        },
+        {
+            "eospath": "/store/group/phys_exotica/PPS-Exo/Grid",
+            "enable": 0,
+            "unitsperjob": 10,
+            "localpath": "/afs/cern.ch/user/d/dmf/private/work/private/CMSPhysicsAnalysis/DarkMatterSearch/2021/NTuplizer/CMSSW_10_6_17_patch1/src/PPSFramework/working",
+            "lumimask": "/afs/cern.ch/user/d/dmf/private/work/private/CMSPhysicsAnalysis/DarkMatterSearch/2021/NTuplizer/CMSSW_10_6_17_patch1/src/PPSFramework/working/json_dpg/combined_RPIN_CMS_2018.json",
+            "sample": "/EGamma/Run2018C-UL2018_MiniAODv2-v1/MINIAOD",
+            "output": "output.root",
+            "id": 2,
+            "name": "egamma-data-2018C-13TEV",
+            "parameters": [
+                "year=2018",
+                "ppstagging=True",
+                "physics=electron",
+                "mode=data",
+                "trigger=True"
+            ],
+            "mode": "data_analysis",
+            "site": "T2_CH_CERN",
+            "input": "",
+            "config": "/afs/cern.ch/user/d/dmf/private/work/private/CMSPhysicsAnalysis/DarkMatterSearch/2021/NTuplizer/CMSSW_10_6_17_patch1/src/PPSFramework/working/RunMissingMassSearches.py"
+        },
+        {
+            "eospath": "/store/group/phys_exotica/PPS-Exo/Grid",
+            "enable": 1,
+            "unitsperjob": 15,
+            "localpath": "/afs/cern.ch/user/d/dmf/private/work/private/CMSPhysicsAnalysis/DarkMatterSearch/2021/NTuplizer/CMSSW_10_6_17_patch1/src/PPSFramework/working",
+            "lumimask": "/afs/cern.ch/user/d/dmf/private/work/private/CMSPhysicsAnalysis/DarkMatterSearch/2021/NTuplizer/CMSSW_10_6_17_patch1/src/PPSFramework/working/json_dpg/combined_RPIN_CMS_2018.json",
+            "sample": "/EGamma/Run2018D-UL2018_MiniAODv2-v1/MINIAOD",
+            "output": "output.root",
+            "id": 3,
+            "name": "egamma-data-2018D-13TEV",
+            "parameters": [
+                "year=2018",
+                "ppstagging=True",
+                "physics=electron",
+                "mode=data",
+                "trigger=True"
+            ],
+            "mode": "data_analysis",
+            "site": "T2_CH_CERN",
+            "input": "",
+            "config": "/afs/cern.ch/user/d/dmf/private/work/private/CMSPhysicsAnalysis/DarkMatterSearch/2021/NTuplizer/CMSSW_10_6_17_patch1/src/PPSFramework/working/RunMissingMassSearches.py"
+        }
+    ]
+}
