@@ -155,3 +155,20 @@ The options are:
 | input   | (string) In case of extra input file | |
 | config   | (string) CMSSW config file | |
 
+## Examples
+
+| File       | Comments |
+| ------------- |:-------------:|
+| samples_skimmer2018_bjets.json | to produce skimmed ttrees for BJets. |
+| samples_skimmer2018_displacedjet.json | to produce skimmed ttrees for BJets. |
+| samples_skimmer2018_doublemuon.json | to produce skimmed ttrees for Double Muon. |
+| samples_skimmer2018_egamma.json | to produce skimmed ttrees for E/Gamma. |
+| samples_skimmer2017_mc.json | to produce skimmed ttrees for MC. |
+| samples_condor_bjets.json | to produce final bjets ntuples. |
+| samples_condor_displacedjet.json | to produce final displaced ntuples. |
+| samples_condor_doublemuon.json | to produce final Double Muon ntuples. |
+| samples_condor_egamma.json | to produce final E/Gamma ntuples. |
+| samples_condor_mc.json | to produce final MC ntuples. |
+| samples_condor_bjets_protonfile.json | to produce final random protons histograms. |
+| samples_create_pythia8.json | to produce CMSSW pythia8 datasets. |
+| samples_create_toymc.json | to produce CMSSW Toy MC datasets. |
