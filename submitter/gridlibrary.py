@@ -223,7 +223,7 @@ class Parser():
         self.config.Data.inputDataset = str(p["sample"])
         self.config.Data.inputDBS = 'global'
         self.config.Data.splitting = 'LumiBased'
-        self.config.Data.unitsPerJob = 20
+        self.config.Data.unitsPerJob = p["unitsperjob"]
         self.config.Data.publication = False
         self.config.Data.lumiMask = str(p["lumimask"])
         self.config.General.transferLogs = True
@@ -232,16 +232,15 @@ class Parser():
         self.config.Data.inputDataset = str(p["sample"])
         self.config.Data.inputDBS = 'global'
         self.config.Data.splitting = 'FileBased'
-        self.config.Data.unitsPerJob = 20
+        self.config.Data.unitsPerJob = p["unitsperjob"]
         self.config.Data.publication = False
-        self.config.Data.lumiMask = str(p["lumimask"])
         self.config.General.transferLogs = True
        elif p["mode"] == "mc_private_analysis":
         self.config.JobType.pluginName = 'Analysis'
         self.config.Data.inputDataset = str(p["sample"])
         self.config.Data.inputDBS = 'phys03'
         self.config.Data.splitting = 'FileBased'
-        self.config.Data.unitsPerJob = 20
+        self.config.Data.unitsPerJob = p["unitsperjob"]
         self.config.Data.publication = False
         self.config.General.transferLogs = True
        elif p["mode"] == "mc_private_hadron_production":

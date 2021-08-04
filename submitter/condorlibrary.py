@@ -105,6 +105,7 @@ class Parser():
         try:
          with open("job_condor_tmp.sub", "w") as fout:
           fout.write(command)
+          fout.close()
           os.system(condor_server+" condor_submit job_condor_tmp.sub")
           os.system("rm job_condor_tmp.sub")
         except HTTPException as hte:
@@ -156,11 +157,21 @@ class Parser():
        par_executable = self.fromListToString(p["parameters"], False)
        par_input_files = self.fromListToString(p["inputfiles"], True)
 
+       if isinstance(p["output"], unicode):
+          if not os.path.exists(str(p["output"])):
+           os.makedirs(str(p["output"]))
+           print "\t" + color.BOLD + "Creating a new directory " + color.ENDC,
+           print "\t" + color.OKBLUE + str(p["output"]) + color.ENDC
+ 
+       else:
+          print("\n"+color.FAIL+"[submitter:condor] Parameter output must be a string.\nPlease, check it."+color.ENDC+"\n")
+          exit()
+
        # Condor commands
        command =  "initialdir\t\t\t= "+str(p["output"])+"\n"
-       command += "executable\t\t\t= ./MissingMassNtupleAnalyzer\n"
+       command += "executable\t\t\t= "+str(p["executable"])+"\n"
        command += "arguments\t\t\t= "+str(par_executable)+ "\n"
-       command += "transfer_input_files\t\t\t= "+str(par_input_files) + "\n"
+       #command += "transfer_input_files\t\t\t= "+str(par_input_files) + "\n"
        command += "output\t\t\t= execution.$(ClusterId).$(ProcId).out\n"
        command += "error\t\t\t= fail.$(ClusterId).$(ProcId).err\n"
        command += "log\t\t\t= status.$(ClusterId).$(ProcId).log\n"
@@ -197,7 +208,7 @@ class Parser():
         command += "max_transfer_input_mb\t\t\t = 2048\n"
         command += "max_transfer_output_mb\t\t\t = 2048\n"
 
-       command += "queue filename matching("+p["inputfolder"]+"*.root)\n"
+       command += "queue filename matching files "+p["inputfolder"]+"*.root\n"
 
        if int(p["enable"]):
         self.submit(command)

@@ -1,0 +1,231 @@
+{
+    "datasets": [
+        {
+            "eospath": "/store/user/dmf", 
+            "enable": 0, 
+            "unitsperjob": 50, 
+            "localpath": "/afs/cern.ch/user/d/dmf/private/work/private/CMSPhysicsAnalysis/PrivateMCProduction/PPSMCProduction/working", 
+            "lumimask": "", 
+            "sample": "", 
+            "output": "RunIISummer20UL17LHE.root", 
+            "id": 0, 
+            "name": "TOY-HX-MC-LHE", 
+            "parameters": "", 
+            "mode": "mc_private_hadron_lhe_production", 
+            "site": "T2_US_Wisconsin", 
+            "input": "", 
+            "config": "/afs/cern.ch/user/d/dmf/private/work/private/CMSPhysicsAnalysis/PrivateMCProduction/PPSMCProduction/working/RunIISummer20UL17LHE_cfg.py"
+        },
+        {
+            "eospath": "/store/user/dmf",
+            "enable": 0,
+            "unitsperjob": 1,
+            "localpath": "/afs/cern.ch/user/d/dmf/private/work/private/CMSPhysicsAnalysis/PrivateMCProduction/PPSMCProduction/working",
+            "lumimask": "",
+            "sample": "/TOY-HX-MC-LHE/dmf-crab_crab_dmf_2021-06-13_UTC18-35-31-3f22eb42fbc8c953391827da6f10333b/USER",
+            "output": "RunIISummer20UL17GEN.root",
+            "id": 1,
+            "name": "TOY-HX-MC-GEN",
+            "parameters": "",
+            "mode": "mc_private_production",
+            "site": "T2_US_Wisconsin",
+            "input": "",
+            "config": "/afs/cern.ch/user/d/dmf/private/work/private/CMSPhysicsAnalysis/PrivateMCProduction/PPSMCProduction/working/RunIISummer20UL17GEN_cfg.py"
+        },
+        {
+            "eospath": "/store/user/dmf",
+            "enable": 0,
+            "unitsperjob": 1,
+            "localpath": "/afs/cern.ch/user/d/dmf/private/work/private/CMSPhysicsAnalysis/PrivateMCProduction/PPSMCProduction/working",
+            "lumimask": "",
+            "sample": "/TOY-HX-MC-LHE/dmf-TOY-HX-MC-GEN-918647be637698d4fc3d9e8c7c3a6328/USER",
+            "output": "RunIISummer20UL17SIM.root",
+            "id": 2,
+            "name": "TOY-HX-MC-SIM-13TEV",
+            "parameters": "",
+            "mode": "mc_private_production",
+            "site": "T2_US_Wisconsin",
+            "input": "",
+            "config": "/afs/cern.ch/user/d/dmf/private/work/private/CMSPhysicsAnalysis/PrivateMCProduction/PPSMCProduction/working/RunIISummer20UL17SIM_cfg.py"
+        },
+        {
+            "eospath": "/store/user/dmf",
+            "enable": 0,
+            "unitsperjob": 1,
+            "localpath": "/afs/cern.ch/user/d/dmf/private/work/private/CMSPhysicsAnalysis/PrivateMCProduction/PPSMCProduction/working",
+            "lumimask": "",
+            "sample": "/TOY-HX-MC-LHE/dmf-TOY-HX-MC-SIM-13TEV-9ac963e13542f33a83ae9ec7fd4ed8d4/USER",
+            "output": "TOP-RunIISummer20UL17DIGIPremix.root",
+            "id": 3,
+            "name": "TOY-HX-MC-PREMIX-13TEV",
+            "parameters": [],
+            "mode": "mc_private_production",
+            "site": "T2_US_Wisconsin",
+            "input": "",
+            "config": "/afs/cern.ch/user/d/dmf/private/work/private/CMSPhysicsAnalysis/PrivateMCProduction/PPSMCProduction/working/RunIISummer20UL17DIGIPremix_cfg.py"
+        },
+        {
+            "eospath": "/store/user/dmf",
+            "enable": 0,
+            "unitsperjob": 1,
+            "localpath": "/afs/cern.ch/user/d/dmf/private/work/private/CMSPhysicsAnalysis/PrivateMCProduction/PPSMCProduction/working",
+            "lumimask": "",
+            "sample": "/TOY-HX-MC-LHE/dmf-TOY-HX-MC-PREMIX-13TEV-1a28be96f8c2ebca4e8c73b389c5e19a/USER",
+            "output": "RunIISummer20UL17HLT.root",
+            "id": 4,
+            "name": "TOY-HX-MC-HLT-13TEV",
+            "parameters": "",
+            "mode": "mc_private_production",
+            "site": "T2_US_Wisconsin",
+            "input": "",
+            "config": "/afs/cern.ch/user/d/dmf/private/work/private/CMSPhysicsAnalysis/PrivateMCProduction/PPSMCProduction/working/RunIISummer20UL17HLT_cfg.py"
+        },
+        {
+            "eospath": "/store/user/dmf",
+            "enable": 0,
+            "unitsperjob": 1,
+            "localpath": "/afs/cern.ch/user/d/dmf/private/work/private/CMSPhysicsAnalysis/PrivateMCProduction/PPSMCProduction/working",
+            "lumimask": "",
+            "sample": "/TOY-HX-MC-LHE/dmf-TOY-HX-MC-HLT-13TEV-1cba7fad1227c919886864247a60b1e3/USER",
+            "output": "RunIISummer20UL17RECO.root",
+            "id": 5,
+            "name": "TOY-HX-MC-RECO-13TEV",
+            "parameters": "",
+            "mode": "mc_private_production",
+            "site": "T2_US_Wisconsin",
+            "input": "",
+            "config": "/afs/cern.ch/user/d/dmf/private/work/private/CMSPhysicsAnalysis/PrivateMCProduction/PPSMCProduction/working/RunIISummer20UL17RECO_cfg.py"
+        },
+        {
+            "eospath": "/store/user/dmf",
+            "enable": 0,
+            "unitsperjob": 1,
+            "localpath": "/afs/cern.ch/user/d/dmf/private/work/private/CMSPhysicsAnalysis/PrivateMCProduction/PPSMCProduction/working",
+            "lumimask": "",
+            "sample": "/TOY-HX-MC-LHE/dmf-TOY-HX-MC-RECO-13TEV-586b03e1195149d852222d5063e2a23c/USER",
+            "output": "RunIISummer20UL17MiniAOD.root",
+            "id": 6,
+            "name": "TOY-HX-MC-miniAOD-13TEV",
+            "parameters": "",
+            "mode": "mc_private_production",
+            "site": "T2_US_Wisconsin",
+            "input": "",
+            "config": "/afs/cern.ch/user/d/dmf/private/work/private/CMSPhysicsAnalysis/PrivateMCProduction/PPSMCProduction/working/RunIISummer20UL17MiniAOD_cfg.py"
+        },
+        {
+            "eospath": "/store/user/dmf",
+            "enable": 0,
+            "unitsperjob": 1,
+            "localpath": "/afs/cern.ch/user/d/dmf/private/work/private/CMSPhysicsAnalysis/PrivateMCProduction/PPSMCProduction/working",
+            "lumimask": "",
+            "sample": "/TOY-HX-MC-LHE/dmf-TOY-HX-MC-miniAOD-13TEV-e67f9b5d033cede4d000433a2a96d4fb/USER",
+            "output": "output.root",
+            "id": 7,
+            "name": "TOY-HX-MC-eraB-2017-miniAOD-PPS-13TEV",
+            "parameters": [
+                "era=B",
+                "year=2017"
+            ],
+            "mode": "mc_private_production",
+            "site": "T2_US_Wisconsin",
+            "input": [
+                "/afs/cern.ch/user/d/dmf/private/work/private/CMSPhysicsAnalysis/PrivateMCProduction/PPSMCProduction/working/CrossingAngles2016.root",
+                "/afs/cern.ch/user/d/dmf/private/work/private/CMSPhysicsAnalysis/PrivateMCProduction/PPSMCProduction/working/CrossingAngles2017.root",
+                "/afs/cern.ch/user/d/dmf/private/work/private/CMSPhysicsAnalysis/PrivateMCProduction/PPSMCProduction/working/CrossingAngles2018.root"
+            ],
+            "config": "/afs/cern.ch/user/d/dmf/private/work/private/CMSPhysicsAnalysis/PrivateMCProduction/PPSMCProduction/working/PPS-Objects.py"
+        },
+       {
+            "eospath": "/store/user/dmf",
+            "enable": 0,
+            "unitsperjob": 1,
+            "localpath": "/afs/cern.ch/user/d/dmf/private/work/private/CMSPhysicsAnalysis/PrivateMCProduction/PPSMCProduction/working",
+            "lumimask": "",
+            "sample": "/TOY-HX-MC-LHE/dmf-TOY-HX-MC-miniAOD-13TEV-e67f9b5d033cede4d000433a2a96d4fb/USER",
+            "output": "output.root",
+            "id": 8,
+            "name": "TOY-HX-MC-eraC-2017-miniAOD-PPS-13TEV",
+            "parameters": [
+                "era=C",
+                "year=2017"
+            ],
+            "mode": "mc_private_production",
+            "site": "T2_US_Wisconsin",
+            "input": [
+                "/afs/cern.ch/user/d/dmf/private/work/private/CMSPhysicsAnalysis/PrivateMCProduction/PPSMCProduction/working/CrossingAngles2016.root",
+                "/afs/cern.ch/user/d/dmf/private/work/private/CMSPhysicsAnalysis/PrivateMCProduction/PPSMCProduction/working/CrossingAngles2017.root",
+                "/afs/cern.ch/user/d/dmf/private/work/private/CMSPhysicsAnalysis/PrivateMCProduction/PPSMCProduction/working/CrossingAngles2018.root"
+            ],
+            "config": "/afs/cern.ch/user/d/dmf/private/work/private/CMSPhysicsAnalysis/PrivateMCProduction/PPSMCProduction/working/PPS-Objects.py"
+        },
+       {
+            "eospath": "/store/user/dmf",
+            "enable": 0,
+            "unitsperjob": 1,
+            "localpath": "/afs/cern.ch/user/d/dmf/private/work/private/CMSPhysicsAnalysis/PrivateMCProduction/PPSMCProduction/working",
+            "lumimask": "",
+            "sample": "/TOY-HX-MC-LHE/dmf-TOY-HX-MC-miniAOD-13TEV-e67f9b5d033cede4d000433a2a96d4fb/USER",
+            "output": "output.root",
+            "id": 9,
+            "name": "TOY-HX-MC-eraD-2017-miniAOD-PPS-13TEV",
+            "parameters": [
+                "era=D",
+                "year=2017"
+            ],
+            "mode": "mc_private_production",
+            "site": "T2_US_Wisconsin",
+            "input": [
+                "/afs/cern.ch/user/d/dmf/private/work/private/CMSPhysicsAnalysis/PrivateMCProduction/PPSMCProduction/working/CrossingAngles2016.root",
+                "/afs/cern.ch/user/d/dmf/private/work/private/CMSPhysicsAnalysis/PrivateMCProduction/PPSMCProduction/working/CrossingAngles2017.root",
+                "/afs/cern.ch/user/d/dmf/private/work/private/CMSPhysicsAnalysis/PrivateMCProduction/PPSMCProduction/working/CrossingAngles2018.root"
+            ],
+            "config": "/afs/cern.ch/user/d/dmf/private/work/private/CMSPhysicsAnalysis/PrivateMCProduction/PPSMCProduction/working/PPS-Objects.py"
+        },
+       {
+            "eospath": "/store/user/dmf",
+            "enable": 0,
+            "unitsperjob": 1,
+            "localpath": "/afs/cern.ch/user/d/dmf/private/work/private/CMSPhysicsAnalysis/PrivateMCProduction/PPSMCProduction/working",
+            "lumimask": "",
+            "sample": "/TOY-HX-MC-LHE/dmf-TOY-HX-MC-miniAOD-13TEV-e67f9b5d033cede4d000433a2a96d4fb/USER",
+            "output": "output.root",
+            "id": 10,
+            "name": "TOY-HX-MC-eraE-2017-miniAOD-PPS-13TEV",
+            "parameters": [
+                "era=E",
+                "year=2017"
+            ],
+            "mode": "mc_private_production",
+            "site": "T2_US_Wisconsin",
+            "input": [
+                "/afs/cern.ch/user/d/dmf/private/work/private/CMSPhysicsAnalysis/PrivateMCProduction/PPSMCProduction/working/CrossingAngles2016.root",
+                "/afs/cern.ch/user/d/dmf/private/work/private/CMSPhysicsAnalysis/PrivateMCProduction/PPSMCProduction/working/CrossingAngles2017.root",
+                "/afs/cern.ch/user/d/dmf/private/work/private/CMSPhysicsAnalysis/PrivateMCProduction/PPSMCProduction/working/CrossingAngles2018.root"
+            ],
+            "config": "/afs/cern.ch/user/d/dmf/private/work/private/CMSPhysicsAnalysis/PrivateMCProduction/PPSMCProduction/working/PPS-Objects.py"
+        },
+       {
+            "eospath": "/store/user/dmf",
+            "enable": 1,
+            "unitsperjob": 1,
+            "localpath": "/afs/cern.ch/user/d/dmf/private/work/private/CMSPhysicsAnalysis/PrivateMCProduction/PPSMCProduction/working",
+            "lumimask": "",
+            "sample": "/TOY-HX-MC-LHE/dmf-TOY-HX-MC-miniAOD-13TEV-e67f9b5d033cede4d000433a2a96d4fb/USER",
+            "output": "output.root",
+            "id": 11,
+            "name": "TOY-HX-MC-eraF-2017-miniAOD-PPS-13TEV",
+            "parameters": [
+                "era=F",
+                "year=2017"
+            ],
+            "mode": "mc_private_production",
+            "site": "T2_US_Wisconsin",
+            "input": [
+                "/afs/cern.ch/user/d/dmf/private/work/private/CMSPhysicsAnalysis/PrivateMCProduction/PPSMCProduction/working/CrossingAngles2016.root",
+                "/afs/cern.ch/user/d/dmf/private/work/private/CMSPhysicsAnalysis/PrivateMCProduction/PPSMCProduction/working/CrossingAngles2017.root",
+                "/afs/cern.ch/user/d/dmf/private/work/private/CMSPhysicsAnalysis/PrivateMCProduction/PPSMCProduction/working/CrossingAngles2018.root"
+            ],
+            "config": "/afs/cern.ch/user/d/dmf/private/work/private/CMSPhysicsAnalysis/PrivateMCProduction/PPSMCProduction/working/PPS-Objects.py"
+        }
+    ]
+}
