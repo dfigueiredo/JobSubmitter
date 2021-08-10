@@ -22,7 +22,7 @@
             "unitsperjob": 1, 
             "localpath": "/afs/cern.ch/user/d/dmf/private/work/private/CMSPhysicsAnalysis/PrivateMCProduction/PPSMCProduction/working", 
             "lumimask": "", 
-            "sample": "/PYTHIA8-SD-TOP-GEN/dmf-crab_crab_dmf_2021-04-23_UTC20-01-50-90b9c105ac810048514e168d042afef5/USER", 
+            "sample": "/PYTHIA8-SD-TOP-GEN/dmf-crab_crab_dmf_2021-06-13_UTC18-40-46-3ca93e3cf8c1b65a28bab9fa315bbc86/USER", 
             "output": "RunIISummer20UL17SIM.root", 
             "id": 1, 
             "name": "PYTHIA8-SD-TOP-GEN-SIM-13TEV", 
@@ -35,7 +35,7 @@
         {
             "eospath": "/store/user/dmf", 
             "enable": 0, 
-            "unitsperjob": 1, 
+            "unitsperjob": 2, 
             "localpath": "/afs/cern.ch/user/d/dmf/private/work/private/CMSPhysicsAnalysis/PrivateMCProduction/PPSMCProduction/working", 
             "lumimask": "", 
             "sample": "/PYTHIA8-SD-TOP-GEN/dmf-PYTHIA8-SD-TOP-GEN-SIM-13TEV-9ac963e13542f33a83ae9ec7fd4ed8d4/USER", 
@@ -51,7 +51,7 @@
         {
             "eospath": "/store/user/dmf", 
             "enable": 0, 
-            "unitsperjob": 1, 
+            "unitsperjob": 2, 
             "localpath": "/afs/cern.ch/user/d/dmf/private/work/private/CMSPhysicsAnalysis/PrivateMCProduction/PPSMCProduction/working", 
             "lumimask": "", 
             "sample": "/PYTHIA8-SD-TOP-GEN/dmf-PYTHIA8-SD-TOP-DIGI-PREMIX-13TEV-1a28be96f8c2ebca4e8c73b389c5e19a/USER", 
@@ -67,7 +67,7 @@
         {
             "eospath": "/store/user/dmf", 
             "enable": 0, 
-            "unitsperjob": 1, 
+            "unitsperjob": 2, 
             "localpath": "/afs/cern.ch/user/d/dmf/private/work/private/CMSPhysicsAnalysis/PrivateMCProduction/PPSMCProduction/working", 
             "lumimask": "", 
             "sample": "/PYTHIA8-SD-TOP-GEN/dmf-PYTHIA8-SD-TOP-HLT-13TEV-1cba7fad1227c919886864247a60b1e3/USER", 
@@ -83,7 +83,7 @@
         {
             "eospath": "/store/user/dmf", 
             "enable": 0, 
-            "unitsperjob": 1, 
+            "unitsperjob": 2, 
             "localpath": "/afs/cern.ch/user/d/dmf/private/work/private/CMSPhysicsAnalysis/PrivateMCProduction/PPSMCProduction/working", 
             "lumimask": "", 
             "sample": "/PYTHIA8-SD-TOP-GEN/dmf-PYTHIA8-SD-TOP-RECO-13TEV-586b03e1195149d852222d5063e2a23c/USER", 
@@ -98,16 +98,16 @@
         }, 
         {
             "eospath": "/store/user/dmf", 
-            "enable": 0, 
-            "unitsperjob": 1, 
+            "enable": 1, 
+            "unitsperjob": 2, 
             "localpath": "/afs/cern.ch/user/d/dmf/private/work/private/CMSPhysicsAnalysis/PrivateMCProduction/PPSMCProduction/working", 
             "lumimask": "", 
             "sample": "/PYTHIA8-SD-TOP-GEN/dmf-PYTHIA8-SD-TOP-MINIAOD-13TEV-e67f9b5d033cede4d000433a2a96d4fb/USER", 
             "output": "output.root", 
             "id": 6, 
-            "name": "PYTHIA8-SD-TOP-MINIAOD-eraD-withpps-13TEV", 
+            "name": "PYTHIA8-SD-TOP-MINIAOD-eraB-2017-withpps-13TEV", 
             "parameters": [
-                "era=B", 
+                "era=B",
                 "year=2017"
             ], 
             "mode": "mc_private_production", 
@@ -118,29 +118,98 @@
                 "/afs/cern.ch/user/d/dmf/private/work/private/CMSPhysicsAnalysis/PrivateMCProduction/PPSMCProduction/working/CrossingAngles2018.root"
             ], 
             "config": "/afs/cern.ch/user/d/dmf/private/work/private/CMSPhysicsAnalysis/PrivateMCProduction/PPSMCProduction/working/PPS-Objects.py"
-        }, 
+        },
         {
-            "eospath": "/store/user/dmf", 
-            "enable": 1, 
-            "unitsperjob": 1, 
-            "localpath": "/afs/cern.ch/user/d/dmf/private/work/private/CMSPhysicsAnalysis/PrivateMCProduction/PPSMCProduction/working", 
-            "lumimask": "", 
-            "sample": "/PYTHIA8-SD-TOP-GEN/dmf-PYTHIA8-SD-TOP-MINIAOD-13TEV-e67f9b5d033cede4d000433a2a96d4fb/USER", 
-            "output": "output.root", 
-            "id": 7, 
-            "name": "PYTHIA8-SD-TOP-MINIAOD-eraC-withpps-13TEV", 
+            "eospath": "/store/user/dmf",
+            "enable": 1,
+            "unitsperjob": 2,
+            "localpath": "/afs/cern.ch/user/d/dmf/private/work/private/CMSPhysicsAnalysis/PrivateMCProduction/PPSMCProduction/working",
+            "lumimask": "",
+            "sample": "/PYTHIA8-SD-TOP-GEN/dmf-PYTHIA8-SD-TOP-MINIAOD-13TEV-e67f9b5d033cede4d000433a2a96d4fb/USER",
+            "output": "output.root",
+            "id": 7,
+            "name": "PYTHIA8-SD-TOP-MINIAOD-eraC-2017-withpps-13TEV",
             "parameters": [
-                "era=C", 
+                "era=C",
                 "year=2017"
-            ], 
-            "mode": "mc_private_production", 
-            "site": "T2_US_Wisconsin", 
+            ],
+            "mode": "mc_private_production",
+            "site": "T2_US_Wisconsin",
             "input": [
-                "/afs/cern.ch/user/d/dmf/private/work/private/CMSPhysicsAnalysis/PrivateMCProduction/PPSMCProduction/working/CrossingAngles2016.root", 
-                "/afs/cern.ch/user/d/dmf/private/work/private/CMSPhysicsAnalysis/PrivateMCProduction/PPSMCProduction/working/CrossingAngles2017.root", 
+                "/afs/cern.ch/user/d/dmf/private/work/private/CMSPhysicsAnalysis/PrivateMCProduction/PPSMCProduction/working/CrossingAngles2016.root",
+                "/afs/cern.ch/user/d/dmf/private/work/private/CMSPhysicsAnalysis/PrivateMCProduction/PPSMCProduction/working/CrossingAngles2017.root",
                 "/afs/cern.ch/user/d/dmf/private/work/private/CMSPhysicsAnalysis/PrivateMCProduction/PPSMCProduction/working/CrossingAngles2018.root"
-            ], 
+            ],
             "config": "/afs/cern.ch/user/d/dmf/private/work/private/CMSPhysicsAnalysis/PrivateMCProduction/PPSMCProduction/working/PPS-Objects.py"
-        } 
+        },
+        {
+            "eospath": "/store/user/dmf",
+            "enable": 1,
+            "unitsperjob": 2,
+            "localpath": "/afs/cern.ch/user/d/dmf/private/work/private/CMSPhysicsAnalysis/PrivateMCProduction/PPSMCProduction/working",
+            "lumimask": "",
+            "sample": "/PYTHIA8-SD-TOP-GEN/dmf-PYTHIA8-SD-TOP-MINIAOD-13TEV-e67f9b5d033cede4d000433a2a96d4fb/USER",
+            "output": "output.root",
+            "id": 8,
+            "name": "PYTHIA8-SD-TOP-MINIAOD-eraD-2017-withpps-13TEV",
+            "parameters": [
+                "era=D",
+                "year=2017"
+            ],
+            "mode": "mc_private_production",
+            "site": "T2_US_Wisconsin",
+            "input": [
+                "/afs/cern.ch/user/d/dmf/private/work/private/CMSPhysicsAnalysis/PrivateMCProduction/PPSMCProduction/working/CrossingAngles2016.root",
+                "/afs/cern.ch/user/d/dmf/private/work/private/CMSPhysicsAnalysis/PrivateMCProduction/PPSMCProduction/working/CrossingAngles2017.root",
+                "/afs/cern.ch/user/d/dmf/private/work/private/CMSPhysicsAnalysis/PrivateMCProduction/PPSMCProduction/working/CrossingAngles2018.root"
+            ],
+            "config": "/afs/cern.ch/user/d/dmf/private/work/private/CMSPhysicsAnalysis/PrivateMCProduction/PPSMCProduction/working/PPS-Objects.py"
+        },
+        {
+            "eospath": "/store/user/dmf",
+            "enable": 1,
+            "unitsperjob": 2,
+            "localpath": "/afs/cern.ch/user/d/dmf/private/work/private/CMSPhysicsAnalysis/PrivateMCProduction/PPSMCProduction/working",
+            "lumimask": "",
+            "sample": "/PYTHIA8-SD-TOP-GEN/dmf-PYTHIA8-SD-TOP-MINIAOD-13TEV-e67f9b5d033cede4d000433a2a96d4fb/USER",
+            "output": "output.root",
+            "id": 8,
+            "name": "PYTHIA8-SD-TOP-MINIAOD-eraE-2017-withpps-13TEV",
+            "parameters": [
+                "era=E",
+                "year=2017"
+            ],
+            "mode": "mc_private_production",
+            "site": "T2_US_Wisconsin",
+            "input": [
+                "/afs/cern.ch/user/d/dmf/private/work/private/CMSPhysicsAnalysis/PrivateMCProduction/PPSMCProduction/working/CrossingAngles2016.root",
+                "/afs/cern.ch/user/d/dmf/private/work/private/CMSPhysicsAnalysis/PrivateMCProduction/PPSMCProduction/working/CrossingAngles2017.root",
+                "/afs/cern.ch/user/d/dmf/private/work/private/CMSPhysicsAnalysis/PrivateMCProduction/PPSMCProduction/working/CrossingAngles2018.root"
+            ],
+            "config": "/afs/cern.ch/user/d/dmf/private/work/private/CMSPhysicsAnalysis/PrivateMCProduction/PPSMCProduction/working/PPS-Objects.py"
+        },
+        {
+            "eospath": "/store/user/dmf",
+            "enable": 1,
+            "unitsperjob": 2,
+            "localpath": "/afs/cern.ch/user/d/dmf/private/work/private/CMSPhysicsAnalysis/PrivateMCProduction/PPSMCProduction/working",
+            "lumimask": "",
+            "sample": "/PYTHIA8-SD-TOP-GEN/dmf-PYTHIA8-SD-TOP-MINIAOD-13TEV-e67f9b5d033cede4d000433a2a96d4fb/USER",
+            "output": "output.root",
+            "id": 9,
+            "name": "PYTHIA8-SD-TOP-MINIAOD-eraF-2017-withpps-13TEV",
+            "parameters": [
+                "era=F",
+                "year=2017"
+            ],
+            "mode": "mc_private_production",
+            "site": "T2_US_Wisconsin",
+            "input": [
+                "/afs/cern.ch/user/d/dmf/private/work/private/CMSPhysicsAnalysis/PrivateMCProduction/PPSMCProduction/working/CrossingAngles2016.root",
+                "/afs/cern.ch/user/d/dmf/private/work/private/CMSPhysicsAnalysis/PrivateMCProduction/PPSMCProduction/working/CrossingAngles2017.root",
+                "/afs/cern.ch/user/d/dmf/private/work/private/CMSPhysicsAnalysis/PrivateMCProduction/PPSMCProduction/working/CrossingAngles2018.root"
+            ],
+            "config": "/afs/cern.ch/user/d/dmf/private/work/private/CMSPhysicsAnalysis/PrivateMCProduction/PPSMCProduction/working/PPS-Objects.py"
+        }
     ]
 }
