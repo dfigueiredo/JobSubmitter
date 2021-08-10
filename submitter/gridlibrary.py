@@ -182,6 +182,8 @@ class Parser():
        tagname = 'crab_%s_%s' % (getpass.getuser(), timestr)
        localpath = '%s/%s/%s' % (p["localpath"], str(p["name"]), tagname)
        eospath = '%s/%s/%s' % (p["eospath"], str(p["name"]), tagname)
+       outputname = '%s_%s' % (str(p["name"]), timestr)
+       
 
        if (isinstance(p["parameters"], list)) and not any([self.is_empty_or_blank(elem) for elem in p["parameters"]]):
          par_ = p["parameters"]
@@ -245,7 +247,7 @@ class Parser():
         self.config.General.transferLogs = True
        elif p["mode"] == "mc_private_hadron_production":
         self.config.JobType.pluginName = 'PrivateMC'
-        self.config.Data.outputPrimaryDataset = str(p["name"])
+        self.config.Data.outputPrimaryDataset = outputname
         self.config.Data.inputDBS = 'phys03'
         self.config.Data.splitting = 'EventBased'
         self.config.Data.unitsPerJob = p["unitsperjob"]
@@ -269,7 +271,7 @@ class Parser():
          nsplit = int(0.1*LHEEvents)
         self.config.JobType.pluginName = 'PrivateMC'
         self.config.JobType.generator = 'lhe'
-        self.config.Data.outputPrimaryDataset = str(p["name"])
+        self.config.Data.outputPrimaryDataset = outputname
         self.config.Data.inputDBS = 'phys03'
         self.config.Data.splitting = 'EventBased'
         self.config.Data.unitsPerJob = nsplit
@@ -280,7 +282,7 @@ class Parser():
        elif p["mode"] == "mc_private_production":
         self.config.Data.inputDataset = str(p["sample"])
         self.config.JobType.pluginName = 'Analysis'
-        self.config.Data.outputDatasetTag = str(p["name"])
+        self.config.Data.outputDatasetTag = outputname
         self.config.Data.inputDBS = 'phys03'
         self.config.Data.splitting = 'FileBased'
         self.config.Data.unitsPerJob = p["unitsperjob"]

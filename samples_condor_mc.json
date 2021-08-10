@@ -1,22 +1,179 @@
 {
     "datasets": [
         {
-            "executable": "/afs/cern.ch/user/d/dmf/private/work/private/CMSPhysicsAnalysis/DarkMatterSearch/2021/NTuplizer/CMSSW_10_6_17_patch1/src/PPSFramework/Analyzer/MissingMassNtupleAnalyzer", 
-            "enable": 1, 
+            "executable": "/afs/cern.ch/user/d/dmf/private/work/private/CMSPhysicsAnalysis/DarkMatterSearch/2021/NTuplizer/CMSSW_10_6_17_patch1/src/PPSFramework/Analyzer/MissingMassNtupleAnalyzer",
+            "enable": 1,
             "parameters": [
-                "--f $(filename)", 
-                "--year 2018", 
-                "--era A", 
-                "--mode mc", 
-                "--physics bjet", 
-                "--random", 
-                "--notrigger", 
+                "--f $(filename)",
+                "--year 2017",
+                "--era B",
+                "--mode mc",
+                "--physics muon",
+                "--random",
+                "--notrigger",
                 "--jobid $(ProcId)"
-            ], 
-            "inputfiles": "/afs/cern.ch/user/d/dmf/private/work/private/CMSPhysicsAnalysis/DarkMatterSearch/2021/NTuplizer/CMSSW_10_6_17_patch1/src/PPSFramework/Analyzer/RandomProtons_bjet.root", 
-            "output": "pythia8-mc-era-A-year-2018/",
-            "inputfolder": "/eos/cms/store/group/phys_exotica/PPS-Exo/Grid/pythia8-bjet-mc-2018A-13TEV/crab_dmf_2021-08-02_UTC11-02-22/PYTHIA8-SD-TOP-GEN/crab_crab_dmf_2021-08-02_UTC11-02-22/210802_090637/0000/", 
+            ],
+            "inputfiles": "/afs/cern.ch/user/d/dmf/private/work/private/CMSPhysicsAnalysis/DarkMatterSearch/2021/NTuplizer/CMSSW_10_6_17_patch1/src/PPSFramework/Analyzer/RandomProtons_muon.root",
+            "output": "pythia8-mc-era-B-year-2017/",
+            "inputfolder": "/eos/cms/store/group/phys_exotica/PPS-Exo/Grid/pythia8-muon-mc-2017B-13TEV/crab_dmf_2021-08-04_UTC17-07-31/PYTHIA8-SD-TOP-GEN/crab_crab_dmf_2021-08-04_UTC17-07-31/210804_150746/0000/",
             "id": 0
+        },
+        {
+            "executable": "/afs/cern.ch/user/d/dmf/private/work/private/CMSPhysicsAnalysis/DarkMatterSearch/2021/NTuplizer/CMSSW_10_6_17_patch1/src/PPSFramework/Analyzer/MissingMassNtupleAnalyzer",
+            "enable": 1,
+            "parameters": [
+                "--f $(filename)",
+                "--year 2017",
+                "--era C",
+                "--mode mc",
+                "--physics muon",
+                "--random",
+                "--notrigger",
+                "--jobid $(ProcId)"
+            ],
+            "inputfiles": "/afs/cern.ch/user/d/dmf/private/work/private/CMSPhysicsAnalysis/DarkMatterSearch/2021/NTuplizer/CMSSW_10_6_17_patch1/src/PPSFramework/Analyzer/RandomProtons_muon.root",
+            "output": "pythia8-mc-era-C-year-2017/",
+            "inputfolder": "/eos/cms/store/group/phys_exotica/PPS-Exo/Grid/pythia8-muon-mc-2017C-13TEV/crab_dmf_2021-08-04_UTC17-07-47/PYTHIA8-SD-TOP-GEN/crab_crab_dmf_2021-08-04_UTC17-07-47/210804_150756/0000/",
+            "id": 1
+        },
+        {
+            "executable": "/afs/cern.ch/user/d/dmf/private/work/private/CMSPhysicsAnalysis/DarkMatterSearch/2021/NTuplizer/CMSSW_10_6_17_patch1/src/PPSFramework/Analyzer/MissingMassNtupleAnalyzer",
+            "enable": 1,
+            "parameters": [
+                "--f $(filename)",
+                "--year 2017",
+                "--era D",
+                "--mode mc",
+                "--physics muon",
+                "--random",
+                "--notrigger",
+                "--jobid $(ProcId)"
+            ],
+            "inputfiles": "/afs/cern.ch/user/d/dmf/private/work/private/CMSPhysicsAnalysis/DarkMatterSearch/2021/NTuplizer/CMSSW_10_6_17_patch1/src/PPSFramework/Analyzer/RandomProtons_muon.root",
+            "output": "pythia8-mc-era-D-year-2017/",
+            "inputfolder": "/eos/cms/store/group/phys_exotica/PPS-Exo/Grid/pythia8-muon-mc-2017D-13TEV/crab_dmf_2021-08-04_UTC17-07-56/PYTHIA8-SD-TOP-GEN/crab_crab_dmf_2021-08-04_UTC17-07-56/210804_150805/0000/",
+            "id": 2
+        },
+        {
+            "executable": "/afs/cern.ch/user/d/dmf/private/work/private/CMSPhysicsAnalysis/DarkMatterSearch/2021/NTuplizer/CMSSW_10_6_17_patch1/src/PPSFramework/Analyzer/MissingMassNtupleAnalyzer",
+            "enable": 1,
+            "parameters": [
+                "--f $(filename)",
+                "--year 2017",
+                "--era E",
+                "--mode mc",
+                "--physics muon",
+                "--random",
+                "--notrigger",
+                "--jobid $(ProcId)"
+            ],
+            "inputfiles": "/afs/cern.ch/user/d/dmf/private/work/private/CMSPhysicsAnalysis/DarkMatterSearch/2021/NTuplizer/CMSSW_10_6_17_patch1/src/PPSFramework/Analyzer/RandomProtons_muon.root",
+            "output": "pythia8-mc-era-E-year-2017/",
+            "inputfolder": "/eos/cms/store/group/phys_exotica/PPS-Exo/Grid/pythia8-muon-mc-2017E-13TEV/crab_dmf_2021-08-04_UTC17-08-05/PYTHIA8-SD-TOP-GEN/crab_crab_dmf_2021-08-04_UTC17-08-05/210804_150824/0000/",
+            "id": 3
+        },
+        {
+            "executable": "/afs/cern.ch/user/d/dmf/private/work/private/CMSPhysicsAnalysis/DarkMatterSearch/2021/NTuplizer/CMSSW_10_6_17_patch1/src/PPSFramework/Analyzer/MissingMassNtupleAnalyzer",
+            "enable": 1,
+            "parameters": [
+                "--f $(filename)",
+                "--year 2017",
+                "--era F",
+                "--mode mc",
+                "--physics muon",
+                "--random",
+                "--notrigger",
+                "--jobid $(ProcId)"
+            ],
+            "inputfiles": "/afs/cern.ch/user/d/dmf/private/work/private/CMSPhysicsAnalysis/DarkMatterSearch/2021/NTuplizer/CMSSW_10_6_17_patch1/src/PPSFramework/Analyzer/RandomProtons_muon.root",
+            "output": "pythia8-mc-era-F-year-2017/",
+            "inputfolder": "/eos/cms/store/group/phys_exotica/PPS-Exo/Grid/pythia8-muon-mc-2017F-13TEV/crab_dmf_2021-08-04_UTC17-08-24/PYTHIA8-SD-TOP-GEN/crab_crab_dmf_2021-08-04_UTC17-08-24/210804_150833/0000/",
+            "id": 4
+        },
+        {
+            "executable": "/afs/cern.ch/user/d/dmf/private/work/private/CMSPhysicsAnalysis/DarkMatterSearch/2021/NTuplizer/CMSSW_10_6_17_patch1/src/PPSFramework/Analyzer/MissingMassNtupleAnalyzer",
+            "enable": 0,
+            "parameters": [
+                "--f $(filename)",
+                "--year 2017",
+                "--era B",
+                "--mode mc",
+                "--physics bjet",
+                "--notrigger",
+                "--jobid $(ProcId)"
+            ],
+            "inputfiles": "/afs/cern.ch/user/d/dmf/private/work/private/CMSPhysicsAnalysis/DarkMatterSearch/2021/NTuplizer/CMSSW_10_6_17_patch1/src/PPSFramework/Analyzer/RandomProtons_bjet.root",
+            "output": "toymc-era-B-year-2017/",
+            "inputfolder": "/eos/cms/store/group/phys_exotica/PPS-Exo/Grid/toy-mc-hxs-bjet-mc-2017B-13TEV/crab_dmf_2021-08-04_UTC10-35-46/TOY-HX-MC-LHE/crab_crab_dmf_2021-08-04_UTC10-35-46/210804_083555/0000/",
+            "id": 5
+        },
+        {
+            "executable": "/afs/cern.ch/user/d/dmf/private/work/private/CMSPhysicsAnalysis/DarkMatterSearch/2021/NTuplizer/CMSSW_10_6_17_patch1/src/PPSFramework/Analyzer/MissingMassNtupleAnalyzer",
+            "enable": 0,
+            "parameters": [
+                "--f $(filename)",
+                "--year 2017",
+                "--era C",
+                "--mode mc",
+                "--physics bjet",
+                "--notrigger",
+                "--jobid $(ProcId)"
+            ],
+            "inputfiles": "/afs/cern.ch/user/d/dmf/private/work/private/CMSPhysicsAnalysis/DarkMatterSearch/2021/NTuplizer/CMSSW_10_6_17_patch1/src/PPSFramework/Analyzer/RandomProtons_bjet.root",
+            "output": "toymc-era-C-year-2017/",
+            "inputfolder": "/eos/cms/store/group/phys_exotica/PPS-Exo/Grid/toy-mc-hxs-bjet-mc-2017C-13TEV/crab_dmf_2021-08-04_UTC10-35-56/TOY-HX-MC-LHE/crab_crab_dmf_2021-08-04_UTC10-35-56/210804_083605/0000/",
+            "id": 6
+        },
+        {
+            "executable": "/afs/cern.ch/user/d/dmf/private/work/private/CMSPhysicsAnalysis/DarkMatterSearch/2021/NTuplizer/CMSSW_10_6_17_patch1/src/PPSFramework/Analyzer/MissingMassNtupleAnalyzer",
+            "enable": 0,
+            "parameters": [
+                "--f $(filename)",
+                "--year 2017",
+                "--era D",
+                "--mode mc",
+                "--physics bjet",
+                "--notrigger",
+                "--jobid $(ProcId)"
+            ],
+            "inputfiles": "/afs/cern.ch/user/d/dmf/private/work/private/CMSPhysicsAnalysis/DarkMatterSearch/2021/NTuplizer/CMSSW_10_6_17_patch1/src/PPSFramework/Analyzer/RandomProtons_bjet.root",
+            "output": "toymc-era-D-year-2017/",
+            "inputfolder": "/eos/cms/store/group/phys_exotica/PPS-Exo/Grid/toy-mc-hxs-bjet-mc-2017D-13TEV/crab_dmf_2021-08-04_UTC10-36-05/TOY-HX-MC-LHE/crab_crab_dmf_2021-08-04_UTC10-36-05/210804_083625/0000/",
+            "id": 7
+        },
+        {
+            "executable": "/afs/cern.ch/user/d/dmf/private/work/private/CMSPhysicsAnalysis/DarkMatterSearch/2021/NTuplizer/CMSSW_10_6_17_patch1/src/PPSFramework/Analyzer/MissingMassNtupleAnalyzer",
+            "enable": 0,
+            "parameters": [
+                "--f $(filename)",
+                "--year 2017",
+                "--era E",
+                "--mode mc",
+                "--physics bjet",
+                "--notrigger",
+                "--jobid $(ProcId)"
+            ],
+            "inputfiles": "/afs/cern.ch/user/d/dmf/private/work/private/CMSPhysicsAnalysis/DarkMatterSearch/2021/NTuplizer/CMSSW_10_6_17_patch1/src/PPSFramework/Analyzer/RandomProtons_bjet.root",
+            "output": "toymc-era-E-year-2017/",
+            "inputfolder": "/eos/cms/store/group/phys_exotica/PPS-Exo/Grid/toy-mc-hxs-bjet-mc-2017E-13TEV/crab_dmf_2021-08-04_UTC10-36-25/TOY-HX-MC-LHE/crab_crab_dmf_2021-08-04_UTC10-36-25/210804_083634/0000/",
+            "id": 8
+        },
+        {
+            "executable": "/afs/cern.ch/user/d/dmf/private/work/private/CMSPhysicsAnalysis/DarkMatterSearch/2021/NTuplizer/CMSSW_10_6_17_patch1/src/PPSFramework/Analyzer/MissingMassNtupleAnalyzer",
+            "enable": 0,
+            "parameters": [
+                "--f $(filename)",
+                "--year 2017",
+                "--era F",
+                "--mode mc",
+                "--physics bjet",
+                "--notrigger",
+                "--jobid $(ProcId)"
+            ],
+            "inputfiles": "/afs/cern.ch/user/d/dmf/private/work/private/CMSPhysicsAnalysis/DarkMatterSearch/2021/NTuplizer/CMSSW_10_6_17_patch1/src/PPSFramework/Analyzer/RandomProtons_bjet.root",
+            "output": "toymc-era-F-year-2017/",
+            "inputfolder": "/eos/cms/store/group/phys_exotica/PPS-Exo/Grid/toy-mc-hxs-bjet-mc-2017F-13TEV/crab_dmf_2021-08-04_UTC10-36-34/TOY-HX-MC-LHE/crab_crab_dmf_2021-08-04_UTC10-36-34/210804_083643/0000/",
+            "id": 9
         }
     ]
 }
