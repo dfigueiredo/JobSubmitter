@@ -1,0 +1,20 @@
+{
+    "datasets": [
+        {
+            "eospath": "/store/user/dmf", 
+            "enable": 1, 
+            "unitsperjob": 250, 
+            "localpath": "/afs/cern.ch/user/d/dmf/private/work/private/CMSPhysicsAnalysis/PrivateMCProduction/PPSMCProduction/working", 
+            "lumimask": "", 
+            "sample": "", 
+            "output": "RunIISummer20UL17GEN.root", 
+            "id": 0, 
+            "name": "PYTHIA8-SD-Zmumu-GEN", 
+            "parameters": "", 
+            "mode": "mc_private_hadron_production", 
+            "site": "T2_US_Wisconsin", 
+            "input": "", 
+            "config": "/afs/cern.ch/user/d/dmf/private/work/private/CMSPhysicsAnalysis/PrivateMCProduction/PPSMCProduction/working/SD-Z-PYTHIA8_cfg.py"
+        } 
+    ]
+}
