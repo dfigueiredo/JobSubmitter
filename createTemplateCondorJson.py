@@ -57,7 +57,7 @@ for subdir in listing:
     'enable': 1,
     'inputfolder': subdir+"/",
     'executable': "/afs/cern.ch/user/d/dmf/private/work/private/CMSPhysicsAnalysis/DarkMatterSearch/2021/NTuplizer/CMSSW_10_6_17_patch1/src/PPSFramework/Analyzer/MissingMassNtupleAnalyzer",
-    'inputfiles': (""),
+    'inputfiles': ("/afs/cern.ch/user/d/dmf/private/work/private/CMSPhysicsAnalysis/DarkMatterSearch/2021/NTuplizer/CMSSW_10_6_17_patch1/src/PPSFramework/Analyzer/RandomProtons_muon.root"),
     'parameters':("--f $(filename)","--year "+year,"--era "+era,"--mode "+mode,"--physics "+physics,"--jobid $(ProcId)"),
     'output': (physics+"-"+mode+"-era-"+era+"-year-"+year+"-id"+str(nid)+"/")
   })

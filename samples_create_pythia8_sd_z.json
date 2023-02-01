@@ -2,8 +2,8 @@
     "datasets": [
         {
             "eospath": "/store/user/dmf", 
-            "enable": 1, 
-            "unitsperjob": 250, 
+            "enable": 0, 
+            "unitsperjob": 150, 
             "localpath": "/afs/cern.ch/user/d/dmf/private/work/private/CMSPhysicsAnalysis/PrivateMCProduction/PPSMCProduction/working", 
             "lumimask": "", 
             "sample": "", 
@@ -15,6 +15,109 @@
             "site": "T2_US_Wisconsin", 
             "input": "", 
             "config": "/afs/cern.ch/user/d/dmf/private/work/private/CMSPhysicsAnalysis/PrivateMCProduction/PPSMCProduction/working/SD-Z-PYTHIA8_cfg.py"
-        } 
+        },
+        {
+            "eospath": "/store/user/dmf",
+            "enable": 0,
+            "unitsperjob": 1,
+            "localpath": "/afs/cern.ch/user/d/dmf/private/work/private/CMSPhysicsAnalysis/PrivateMCProduction/PPSMCProduction/working",
+            "lumimask": "",
+            "sample": "/PYTHIA8-SD-Zmumu-GEN_2021-08-11_UTC01-23-54/dmf-crab_crab_dmf_2021-08-11_UTC01-23-54-8ae01eedbadaefca51cc887585ba49e3/USER",
+            "output": "RunIISummer20UL17SIM.root",
+            "id": 1,
+            "name": "PYTHIA8-SD-Zmumu-GEN-SIM-13TEV",
+            "parameters": "",
+            "mode": "mc_private_production",
+            "site": "T2_US_Wisconsin",
+            "input": "",
+            "config": "/afs/cern.ch/user/d/dmf/private/work/private/CMSPhysicsAnalysis/PrivateMCProduction/PPSMCProduction/working/RunIISummer20UL17SIM_cfg.py"
+        },
+        {
+            "eospath": "/store/user/dmf",
+            "enable": 0,
+            "unitsperjob": 1,
+            "localpath": "/afs/cern.ch/user/d/dmf/private/work/private/CMSPhysicsAnalysis/PrivateMCProduction/PPSMCProduction/working",
+            "lumimask": "",
+            "sample": "/PYTHIA8-SD-Zmumu-GEN_2021-08-11_UTC01-23-54/dmf-PYTHIA8-SD-Zmumu-GEN-SIM-13TEV_2021-08-14_UTC23-47-56-9ac963e13542f33a83ae9ec7fd4ed8d4/USER",
+            "output": "RunIISummer20UL17DIGIPremix.root",
+            "id": 2,
+            "name": "PYTHIA8-SD-Zmumu-DIGI-PREMIX-13TEV",
+            "parameters": [],
+            "mode": "mc_private_production",
+            "site": "T2_US_Wisconsin",
+            "input": "",
+            "config": "/afs/cern.ch/user/d/dmf/private/work/private/CMSPhysicsAnalysis/PrivateMCProduction/PPSMCProduction/working/RunIISummer20UL17DIGIPremix_cfg.py"
+        },
+        {
+            "eospath": "/store/user/dmf",
+            "enable": 0,
+            "unitsperjob": 1,
+            "localpath": "/afs/cern.ch/user/d/dmf/private/work/private/CMSPhysicsAnalysis/PrivateMCProduction/PPSMCProduction/working",
+            "lumimask": "",
+            "sample": "/PYTHIA8-SD-Zmumu-GEN_2021-08-11_UTC01-23-54/dmf-PYTHIA8-SD-Zmumu-DIGI-PREMIX-13TEV_2021-08-19_UTC11-43-47-1a28be96f8c2ebca4e8c73b389c5e19a/USER",
+            "output": "RunIISummer20UL17HLT.root",
+            "id": 3,
+            "name": "PYTHIA8-SD-Zmumu-HLT-13TEV",
+            "parameters": "",
+            "mode": "mc_private_production",
+            "site": "T2_US_Wisconsin",
+            "input": "",
+            "config": "/afs/cern.ch/user/d/dmf/private/work/private/CMSPhysicsAnalysis/PrivateMCProduction/PPSMCProduction/working/RunIISummer20UL17HLT_cfg.py"
+        },
+        {
+            "eospath": "/store/user/dmf",
+            "enable": 0,
+            "unitsperjob": 1,
+            "localpath": "/afs/cern.ch/user/d/dmf/private/work/private/CMSPhysicsAnalysis/PrivateMCProduction/PPSMCProduction/working",
+            "lumimask": "",
+            "sample": "/PYTHIA8-SD-Zmumu-GEN_2021-08-11_UTC01-23-54/dmf-PYTHIA8-SD-Zmumu-HLT-13TEV_2021-08-20_UTC11-53-00-1cba7fad1227c919886864247a60b1e3/USER",
+            "output": "RunIISummer20UL17RECO.root",
+            "id": 4,
+            "name": "PYTHIA8-SD-Zmumu-RECO-13TEV",
+            "parameters": "",
+            "mode": "mc_private_production",
+            "site": "T2_US_Wisconsin",
+            "input": "",
+            "config": "/afs/cern.ch/user/d/dmf/private/work/private/CMSPhysicsAnalysis/PrivateMCProduction/PPSMCProduction/working/RunIISummer20UL17RECO_cfg.py"
+        },
+        {
+            "eospath": "/store/user/dmf",
+            "enable": 0,
+            "unitsperjob": 1,
+            "localpath": "/afs/cern.ch/user/d/dmf/private/work/private/CMSPhysicsAnalysis/PrivateMCProduction/PPSMCProduction/working",
+            "lumimask": "",
+            "sample": "/PYTHIA8-SD-Zmumu-GEN_2021-08-11_UTC01-23-54/dmf-PYTHIA8-SD-Zmumu-RECO-13TEV_2021-08-22_UTC22-29-10-586b03e1195149d852222d5063e2a23c/USER",
+            "output": "RunIISummer20UL17MiniAOD.root",
+            "id": 6,
+            "name": "PYTHIA8-SD-Zmumu-MINIAOD-13TEV",
+            "parameters": "",
+            "mode": "mc_private_production",
+            "site": "T2_US_Wisconsin",
+            "input": "",
+            "config": "/afs/cern.ch/user/d/dmf/private/work/private/CMSPhysicsAnalysis/PrivateMCProduction/PPSMCProduction/working/RunIISummer20UL17MiniAOD_cfg.py"
+        },
+        {
+            "eospath": "/store/user/dmf",
+            "enable": 1,
+            "unitsperjob": 1,
+            "localpath": "/afs/cern.ch/user/d/dmf/private/work/private/CMSPhysicsAnalysis/PrivateMCProduction/PPSMCProduction/working",
+            "lumimask": "",
+            "sample": "/PYTHIA8-SD-Zmumu-GEN_2021-08-11_UTC01-23-54/dmf-PYTHIA8-SD-Zmumu-MINIAOD-13TEV_2021-08-23_UTC11-04-07-e67f9b5d033cede4d000433a2a96d4fb/USER",
+            "output": "output.root",
+            "id": 7,
+            "name": "PYTHIA8-SD-Zmumu-eraF-2017-miniAOD-PPS-13TEV",
+            "parameters": [
+                "era=F",
+                "year=2017"
+            ],
+            "mode": "mc_private_production",
+            "site": "T2_US_Wisconsin",
+            "input": [
+                "/afs/cern.ch/user/d/dmf/private/work/private/CMSPhysicsAnalysis/PrivateMCProduction/PPSMCProduction/working/CrossingAngles2016.root",
+                "/afs/cern.ch/user/d/dmf/private/work/private/CMSPhysicsAnalysis/PrivateMCProduction/PPSMCProduction/working/CrossingAngles2017.root",
+                "/afs/cern.ch/user/d/dmf/private/work/private/CMSPhysicsAnalysis/PrivateMCProduction/PPSMCProduction/working/CrossingAngles2018.root"
+            ],
+            "config": "/afs/cern.ch/user/d/dmf/private/work/private/CMSPhysicsAnalysis/PrivateMCProduction/PPSMCProduction/working/PPS-Objects.py"
+        }
     ]
 }
