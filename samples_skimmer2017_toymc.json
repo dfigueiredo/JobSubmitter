@@ -1,0 +1,31 @@
+{
+    "datasets": [
+        {
+            "eospath": "/store/group/phys_exotica/PPS-Exo/Grid",
+            "enable": 1,
+            "unitsperjob": 20,
+            "localpath": "/afs/cern.ch/user/d/dmf/private/work/private/CMSPhysicsAnalysis/DarkMatterSearch/2021/NTuplizer/CMSSW_10_6_17_patch1/src/PPSFramework/working",
+            "lumimask": "",
+            "sample": "/ZXToyMC-GEN_Muon_PostTS2_950_150/dmf-ZXToyMC-13TeV-miniAOD_2020-03-23_UTC13-55-30-b439bc17361eb503f053ea70fabf4631/USER",
+            "output": "output.root",
+            "id": 0,
+            "name": "toy-mc-z-eraF",
+            "parameters": [
+                "year=2017",
+                "era=F",
+                "ppstagging=True",
+                "physics=muon",
+                "mode=mc",
+                "trigger=False"
+            ],
+            "mode": "mc_private_analysis",
+            "site": "T2_CH_CERN",
+            "input": [
+                "/afs/cern.ch/user/d/dmf/private/work/private/CMSPhysicsAnalysis/DarkMatterSearch/2021/NTuplizer/CMSSW_10_6_17_patch1/src/PPSFramework/working/CrossingAngles2016.root",
+                "/afs/cern.ch/user/d/dmf/private/work/private/CMSPhysicsAnalysis/DarkMatterSearch/2021/NTuplizer/CMSSW_10_6_17_patch1/src/PPSFramework/working/CrossingAngles2017.root",
+                "/afs/cern.ch/user/d/dmf/private/work/private/CMSPhysicsAnalysis/DarkMatterSearch/2021/NTuplizer/CMSSW_10_6_17_patch1/src/PPSFramework/working/CrossingAngles2018.root"
+            ],
+            "config": "/afs/cern.ch/user/d/dmf/private/work/private/CMSPhysicsAnalysis/DarkMatterSearch/2021/NTuplizer/CMSSW_10_6_17_patch1/src/PPSFramework/working/RunMissingMassSearches.py"
+        }
+    ]
+}
