@@ -171,7 +171,7 @@ class Parser():
        command =  "initialdir\t\t\t= "+str(p["output"])+"\n"
        command += "executable\t\t\t= "+str(p["executable"])+"\n"
        command += "arguments\t\t\t= "+str(par_executable)+ "\n"
-       #command += "transfer_input_files\t\t\t= "+str(par_input_files) + "\n"
+       command += "transfer_input_files\t\t\t= "+str(par_input_files) + "\n"
        command += "output\t\t\t= execution.$(ClusterId).$(ProcId).out\n"
        command += "error\t\t\t= fail.$(ClusterId).$(ProcId).err\n"
        command += "log\t\t\t= status.$(ClusterId).$(ProcId).log\n"

@@ -235,6 +235,9 @@ class Parser():
         self.config.Data.inputDBS = 'global'
         self.config.Data.splitting = 'FileBased'
         self.config.Data.unitsPerJob = p["unitsperjob"]
+        #self.config.Data.unitsPerJob = 2500
+        self.config.Data.totalUnits = NJOBS * self.config.Data.unitsPerJob
+        #self.config.Data.splitting = 'Automatic'
         self.config.Data.publication = False
         self.config.General.transferLogs = True
        elif p["mode"] == "mc_private_analysis":
