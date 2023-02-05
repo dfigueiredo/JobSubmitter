@@ -1,10 +1,10 @@
 # JobSubmitter
 
-This package is used to submit multple crab or condor tasks on lxplus. Moreover, it is also optimized to produce private Monte-Carlo (MC) samples. 
+This package is used to submit multiple crab or condor tasks from lxplus. Moreover, this tool is also optimized to produce private Monte-Carlo (MC) CMSSW samples (from LHE or CMSSW MC Interfaces).
 
 ## Installation
 
-Download the package from git. It is also important to set the crab environment as well as CMSSW (cmsenv) where your plugins are set. 
+First, download the package from the git repository. It is also important to set the crab environment as well as CMSSW (cmsenv) where your plugins are set. 
 
 ```bash
 git clone https://github.com/dfigueiredo/JobSubmitter.git
@@ -12,14 +12,7 @@ git clone https://github.com/dfigueiredo/JobSubmitter.git
 
 ## Usage
 
-For a given configuration_file.json (specific for condor or crab submission):
-
-```bash
-source /cvmfs/cms.cern.ch/common/crab-setup.sh
-python SubmitterTool.py --f configuration_file.json
-```
-
-There are python scripts which generate template configuration files (*.json):
+The tool loads a json file which contains specific parameters for the job submission on crab or condor. There are multiple examples in this repository. The json format for the condor mode is different for the crab mode. Moreover, when running the tool, by default the mode "crab" is active. If it is not the case, "mode condor" should be active. In case you would like to create your own json file from scratch, the following scripts can create templates:
 
 ```bash
 python createTemplateCondorJson.py
@@ -27,6 +20,16 @@ python createTemplateCondorJson.py
 
 ```bash
 python createTemplateCrabJson.py 
+```
+
+## Running
+
+Remember to set the CMSSW version (with cmsenv) as well as the crab environment, otherwise the tool will complain.
+For loading the "configuration_file.json" as an example:
+
+```bash
+source /cvmfs/cms.cern.ch/common/crab-setup.sh
+python SubmitterTool.py --f configuration_file.json
 ```
 
 ## Options
@@ -67,7 +70,7 @@ jobs_submission> mode crab
 
 ## Configuration File
 
-All the configurations are set in a JSON file for condor or crab submission. Multiple task submission can be done.
+All the configurations are set in a JSON file for condor or crab submission. Multiple tasks can be defined in a single file, but the tool will submit only when "enable" option is "1". The examples bellow are showing the configuration parameters for the condor or crab json file.
 
 ### Condor
 
@@ -93,7 +96,7 @@ All the configurations are set in a JSON file for condor or crab submission. Mul
 }
 ```
 
-The options are:
+The options tags are:
 
 | Options       | Explanation | Comments |
 | ------------- |:-------------:|-------------:|
@@ -155,7 +158,7 @@ The options are:
 | input   | (string) In case of extra input file | |
 | config   | (string) CMSSW config file | |
 
-## Examples
+## Examples of submissions
 
 | File       | Comments |
 | ------------- |:-------------:|
