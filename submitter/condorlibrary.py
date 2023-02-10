@@ -35,6 +35,7 @@ import sys
 import time
 import os
 import getpass
+import glob
 
 from httplib import HTTPException
 from multiprocessing import Process
@@ -156,13 +157,19 @@ class Parser():
 
        par_executable = self.fromListToString(p["parameters"], False)
        par_input_files = self.fromListToString(p["inputfiles"], True)
+       pattern = str(p["inputfiles"])+"//*.root"
+
+       if int(p["enable"]):
+          if not glob.glob(pattern):
+             print("\n"+color.FAIL+"[submitter:condor] There are no files in the specified inputfolder parameter.\nPlease, check it."+color.ENDC+"\n")
+             exit()
 
        if isinstance(p["output"], unicode):
           if not os.path.exists(str(p["output"])):
-           os.makedirs(str(p["output"]))
-           print "\t" + color.BOLD + "Creating a new directory " + color.ENDC,
-           print "\t" + color.OKBLUE + str(p["output"]) + color.ENDC
- 
+             if int(p["enable"]):
+                os.makedirs(str(p["output"]))
+                print "\t" + color.BOLD + "Creating a new directory " + color.ENDC,
+                print "\t" + color.OKBLUE + str(p["output"]) + color.ENDC
        else:
           print("\n"+color.FAIL+"[submitter:condor] Parameter output must be a string.\nPlease, check it."+color.ENDC+"\n")
           exit()
@@ -208,7 +215,7 @@ class Parser():
         command += "max_transfer_input_mb\t\t\t = 2048\n"
         command += "max_transfer_output_mb\t\t\t = 2048\n"
 
-       command += "queue filename matching files "+p["inputfolder"]+"*.root\n"
+       command += "queue filename matching files "+p["inputfolder"]+"/*.root\n"
 
        if int(p["enable"]):
         self.submit(command)
