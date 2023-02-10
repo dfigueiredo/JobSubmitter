@@ -157,7 +157,7 @@ class Parser():
 
        par_executable = self.fromListToString(p["parameters"], False)
        par_input_files = self.fromListToString(p["inputfiles"], True)
-       pattern = str(p["inputfiles"])+"//*.root"
+       pattern = str(p["inputfolder"])+"//*.root"
 
        if int(p["enable"]):
           if not glob.glob(pattern):
