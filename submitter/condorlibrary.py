@@ -107,7 +107,7 @@ class Parser():
          with open("job_condor_tmp.sub", "w") as fout:
           fout.write(command)
           fout.close()
-          os.system(condor_server+" condor_submit job_condor_tmp.sub")
+          os.system(condor_server+" condor_submit -spool job_condor_tmp.sub")
           os.system("rm job_condor_tmp.sub")
         except HTTPException as hte:
             print "Failed submitting task: %s" % (hte.headers)
@@ -175,13 +175,15 @@ class Parser():
           exit()
 
        # Condor commands
-       command =  "initialdir\t\t\t= "+str(p["output"])+"\n"
-       command += "executable\t\t\t= "+str(p["executable"])+"\n"
+       #command = "initialdir\t\t\t= /afs/cern.ch/user/d/dmf/private/work/private/CMSPhysicsAnalysis/JobSubmitter/log/\n"
+       command = "executable\t\t\t= "+str(p["executable"])+"\n"
        command += "arguments\t\t\t= "+str(par_executable)+ "\n"
        command += "transfer_input_files\t\t\t= "+str(par_input_files) + "\n"
        command += "output\t\t\t= execution.$(ClusterId).$(ProcId).out\n"
        command += "error\t\t\t= fail.$(ClusterId).$(ProcId).err\n"
-       command += "log\t\t\t= status.$(ClusterId).$(ProcId).log\n"
+       #command += "log\t\t\t= status.$(ClusterId).$(ProcId).log\n"
+       command += "log\t\t\t=\n"
+       command += "output_destination\t\t\t= "+str(p["output"])+"\n"
        command += "getenv\t\t\t= True\n"
 
        ###########################
